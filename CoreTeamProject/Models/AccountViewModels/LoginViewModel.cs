@@ -10,7 +10,12 @@ namespace CoreTeamProject.Models.AccountViewModels
     {
         [Required]
         [EmailAddress]
+        [Display(Name = "Email")]
         public string Email { get; set; }
+
+        [Required]
+        [StringLength(15, MinimumLength = 5, ErrorMessage = "Please enter a username between 5 and 15 characters")]
+        public string Username { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
