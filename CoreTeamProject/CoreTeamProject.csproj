@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp1.1</TargetFramework>
@@ -11,6 +11,15 @@
   <PropertyGroup>
     <UserSecretsId>aspnet-CoreTeamProject-b2f4c605-9a42-41b8-9011-9fe996aa9926</UserSecretsId>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot/css\site.css" />
+    <Content Remove="wwwroot/css\site.min.css" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="wwwroot\img\gallery\mockPic.jpg" />
+  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />
     <PackageReference Include="Microsoft.AspNetCore" Version="1.1.1" />

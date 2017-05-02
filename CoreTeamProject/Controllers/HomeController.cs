@@ -27,6 +27,22 @@ namespace CoreTeamProject.Controllers
             return View();
         }
 
+        //fcomeau: inputed the browser
+        public IActionResult Browser()
+        {
+            ViewData["Message"] = "Your browser page.";
+
+            return View();
+        }
+
+        //fcomeau: inputed the events
+        public IActionResult Events()
+        {
+            ViewData["Message"] = "Your events page.";
+
+            return View();
+        }
+
         public IActionResult Error()
         {
             return View();
