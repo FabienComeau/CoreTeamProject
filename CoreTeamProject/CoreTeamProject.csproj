@@ -22,6 +22,7 @@
     <Content Include="wwwroot\img\gallery\slider-img-1.jpg" />
     <Content Include="wwwroot\img\gallery\slider-img-2.jpg" />
     <Content Include="wwwroot\img\gallery\slider-img-3.jpg" />
+    <Content Include="wwwroot\img\gallery\slider-img-4-with-text.jpg" />
     <Content Include="wwwroot\img\gallery\slider-img-4.jpg" />
     <Content Include="wwwroot\img\gallery\.png" />
     <Content Include="wwwroot\img\gallery\slider-img-5-with-text.jpg" />

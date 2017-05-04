@@ -1,0 +1,72 @@
+@model CoreTeamProject.Models.Events
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Events</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.eventName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eventName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eventDescription)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eventDescription)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eventDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eventDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eventTime)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eventTime)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eventLocation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eventLocation)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eventEmail)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eventEmail)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eventPhoneNumber)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eventPhoneNumber)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eventCost)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eventCost)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Subcategory)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Subcategory.subCategoryID)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.eventID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
