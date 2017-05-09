@@ -18,6 +18,7 @@ namespace CoreTeamProject.Controllers
         {
             _context = context;    
         }
+        
 
         // GET: Events
         public async Task<IActionResult> Index()
@@ -150,6 +151,16 @@ namespace CoreTeamProject.Controllers
             _context.Event.Remove(events);
             await _context.SaveChangesAsync();
             return RedirectToAction("Index");
+        }
+
+        public async Task<IActionResult> Browser(int? SelectedDepartment)
+        {
+            return View();
+        }
+
+        public async Task<IActionResult> Listing(int? SelectedDepartment)
+        {       
+            return View();
         }
 
         private bool EventsExists(int id)
