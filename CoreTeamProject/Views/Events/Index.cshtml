@@ -34,14 +34,13 @@
                                 <li>
                                 <li><i class="icon-time"></i>@Html.DisplayNameFor(model => model.eventTime): @Html.DisplayFor(modelItem => item.eventTime)
                                 <li>
-                                <li><i class="glyphicon-usd"></i><strong>Posted by:</strong> <a href="#" title="Link">Admin</a>
+                                <li><i class="glyphicon glyphicon-usd"></i>@Html.DisplayNameFor(model => model.eventCost): @Html.DisplayFor(modelItem => item.eventCost)
                                 <li>
                                 <li><i class="icon-road"></i>@Html.DisplayNameFor(model => model.eventLocation): @Html.DisplayFor(modelItem => item.eventLocation)
                                 <li>
-                                <li><i class="icon-tags"></i> <a href="#">photoshop</a>, <a href="#">tutorials</a>, <a href="#">illustration</a>
                             </ul>
                         }
-                    </div>@Html.DisplayFor(modelItem => item.eventLocation)
+                    </div>
 
                     <p class="blog-summary">
                         @foreach (var item in Model)
