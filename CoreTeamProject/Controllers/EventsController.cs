@@ -21,10 +21,13 @@ namespace CoreTeamProject.Controllers
         
 
         // GET: Events
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int? id)
         {
-            var eventContext = _context.Event.Include(e => e.Subcategory);
+            var eventContext = _context.Event
+                .Include(e => e.Subcategory)/*.ThenInclude(c => c.Category)*/
+                .Where(c => c.Subcategory.Category.categoryID == id);
             return View(await eventContext.ToListAsync());
+            //select * from event where subCategoryID in(select subCategoryID from Subcategory where categoryID = 1)
         }
 
         // GET: Events/Details/5
