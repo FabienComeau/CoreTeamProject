@@ -79,7 +79,7 @@
             <!-- Logo
             ================================================== -->
             <div class="span5 logo">
-                <a href="index.htm"><img src="~/img/logo.png" alt="" /></a>
+                <a asp-action="Index" asp-controller="Home"><img src="~/img/logo.png" alt="" /></a>
                 <h5>Moncton's Hottest Events... All In One Place.</h5>
             </div>
 
@@ -92,16 +92,8 @@
                         <li class="dropdown active">
                             <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>                            
                         </li>
-                        <li><a asp-area="" asp-controller="Home" asp-action="Browser">Browser</a></li>
-                        <li class="dropdown">
-                            <a class="dropdown" asp-area="" asp-controller="Home" asp-action="Events">Events <b class="caret"></b></a>
-                            @*<ul class="dropdown-menu">
-                                <li><a href="page-full-width.htm">Full Width</a></li>
-                                <li><a href="page-right-sidebar.htm">Right Sidebar</a></li>
-                                <li><a href="page-left-sidebar.htm">Left Sidebar</a></li>
-                                <li><a href="page-double-sidebar.htm">Double Sidebar</a></li>
-                            </ul>*@
-                        </li>
+                        <li><a asp-area="" asp-controller="Events" asp-action="Browser">Browser</a></li>
+                        <li><a asp-area="" asp-controller="Events" asp-action="Index">Events</a></li>
                         <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" href="gallery-4col.htm">Gallery <b class="caret"></b></a>
                             <ul class="dropdown-menu">

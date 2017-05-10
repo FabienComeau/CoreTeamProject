@@ -25,20 +25,20 @@
                 <div class="active item">
                     <a href="blog-single.htm"><img src="~/img/gallery/blog-med-img-1.jpg" alt="" class="align-left blog-thumb-preview" /></a>
                     <div class="post-info clearfix">
-                        <h4>@Html.DisplayNameFor(model => model.eventName)</h4>
                         @foreach (var item in Model)
                         {
-                        <ul class="blog-details-preview">
-                            <li><i class="icon-calendar"></i>@Html.DisplayNameFor(model => model.eventDate) @Html.DisplayFor(modelItem => item.eventDate)
-                            <li>
-                            <li><i class="icon-time"></i>@Html.DisplayNameFor(model => model.eventTime)
-                            <li>
-                            <li><i class="icon-user"></i><strong>Posted by:</strong> <a href="#" title="Link">Admin</a>
-                            <li>
-                            <li><i class="icon-comment"></i><strong>Comments:</strong> <a href="#" title="Link">12</a>
-                            <li>
-                            <li><i class="icon-tags"></i> <a href="#">photoshop</a>, <a href="#">tutorials</a>, <a href="#">illustration</a>
-                        </ul>
+                            <h4>@Html.DisplayFor(modelItem => item.eventName)</h4>
+
+                            <ul class="blog-details-preview">
+                                <li><i class="icon-calendar"></i>@Html.DisplayNameFor(model => model.eventDate): @Html.DisplayFor(modelItem => item.eventDate)
+                                <li>
+                                <li><i class="icon-time"></i>@Html.DisplayNameFor(model => model.eventTime): @Html.DisplayFor(modelItem => item.eventTime)
+                                <li>
+                                <li><i class="glyphicon glyphicon-usd"></i>@Html.DisplayNameFor(model => model.eventCost): @Html.DisplayFor(modelItem => item.eventCost)
+                                <li>
+                                <li><i class="icon-road"></i>@Html.DisplayNameFor(model => model.eventLocation): @Html.DisplayFor(modelItem => item.eventLocation)
+                                <li>
+                            </ul>
                         }
                     </div>
 
@@ -160,30 +160,30 @@
 <table class="table">
     <thead>
         <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.eventName)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.eventDescription)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.eventDate)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.eventTime)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.eventLocation)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.eventEmail)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.eventPhoneNumber)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.eventCost)
-                </th>
+            <th>
+                @Html.DisplayNameFor(model => model.eventName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.eventDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.eventDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.eventTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.eventLocation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.eventEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.eventPhoneNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.eventCost)
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.Subcategory)
             </th>
@@ -191,41 +191,42 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.eventName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.eventDescription)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.eventDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.eventTime)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.eventLocation)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.eventEmail)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.eventPhoneNumber)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.eventCost)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Subcategory.subCategoryID)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.eventID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.eventID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.eventID">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.eventName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.eventDescription)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.eventDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.eventTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.eventLocation)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.eventEmail)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.eventPhoneNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.eventCost)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Subcategory.subCategoryID)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.eventID">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.eventID">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.eventID">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
