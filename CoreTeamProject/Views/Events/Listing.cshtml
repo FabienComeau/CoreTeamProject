@@ -1,72 +1,161 @@
-﻿@model IEnumerable<Events>
+﻿@model IEnumerable<CoreTeamProject.Models.Events>
 <!-- Blog Content
 ================================================== -->
 <div class="row">
 
-    <!-- Blog Posts
-    ================================================== -->
-    <div class="span8 blog">
+            <!-- Blog Posts
+            ================================================== -->
+            <div class="span8 blog">
 
-        <!-- Blog Post 1 -->
-        <article class="clearfix">
-            <a href="blog-single.htm"><img src="~/img/gallery/gallery-img-1-4col.jpg" alt="Post Thumb" class="align-left"></a>
-            <h4 class="title-bg"><a href="blog-single.htm">A subject that is beautiful in itself</a></h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla iaculis mattis lorem, quis gravida nunc iaculis ac. Proin tristique tellus in est vulputate luctus fermentum ipsum molestie. </p>
-            <button class="btn btn-mini btn-inverse" type="button">Read more</button>
-            <div class="post-summary-footer">
-                <ul class="post-data-3">
-                    <li><i class="icon-calendar"></i> 09/04/15</li>
-                    <li><i class="icon-user"></i> <a href="#">Admin</a></li>
-                    <li><i class="icon-comment"></i> <a href="#">5 Comments</a></li>
-                    <li><i class="icon-tags"></i> <a href="#">photoshop</a>, <a href="#">tutorials</a></li>
+
+                <!-- Blog Post 1 -->
+                <article class="clearfix">
+                    @*@{
+                        int numItems = Model.Count();
+                        if (numItems > 0)
+                        {*@
+                            @*@foreach (var item in Model)
+                            {*@
+                                <a href="blog-single.htm"><img src="~/img/gallery/gallery-img-1-4col.jpg" alt="Post Thumb" class="align-left"></a>
+                                <h4 class="title-bg"><a href="blog-single.htm">A subject that is beautiful in itself</a></h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla iaculis mattis lorem, quis gravida nunc iaculis ac. Proin tristique tellus in est vulputate luctus fermentum ipsum molestie. </p>
+                                <button class="btn btn-mini btn-inverse" type="button">See Event</button>
+                                <div class="post-summary-footer"></div>
+
+                            @*}*@
+
+                        @*}
+                        else
+                        {
+                        <div class="alert alert-danger" role="alert">
+                            There are no events in this category. 
+                        </div>
+                        }
+                    }*@
+                       
+                </article>
+
+                <a asp-action="Create">Create New</a>
+                </p>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.eventName)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.eventDescription)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.eventDate)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.eventTime)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.eventLocation)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.eventEmail)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.eventPhoneNumber)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.eventCost)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Subcategory)
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.eventName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.eventDescription)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.eventDate)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.eventTime)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.eventLocation)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.eventEmail)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.eventPhoneNumber)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.eventCost)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Subcategory.subCategoryID)
+                                </td>
+                                <td>
+                                    <a asp-action="Edit" asp-route-id="@item.eventID">Edit</a> |
+                                    <a asp-action="Details" asp-route-id="@item.eventID">Details</a> |
+                                    <a asp-action="Delete" asp-route-id="@item.eventID">Delete</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+
+
+                <!-- Pagination -->
+                <div class="pagination">
+                    <ul>
+                        <li class="active"><a href="#">Prev</a></li>
+                        <li class="active"><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">Next</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Blog Sidebar
+            ================================================== -->
+            <div class="span4 sidebar">
+
+                <!--Search-->
+                <section>
+                    <div class="input-append">
+                        <form action="#">
+                            <input id="appendedInputButton" size="16" type="text" placeholder="Search"><button class="btn" type="button"><i class="icon-search"></i></button>
+                        </form>
+                    </div>
+                </section>
+
+                <!--Categories-->
+                <h5 class="title-bg">Categories</h5>
+                <ul class="post-category-list">
+                    <li><a href="#"><i class="icon-plus-sign"></i>Design</a></li>
+                    <li><a href="#"><i class="icon-plus-sign"></i>Illustration</a></li>
+                    <li><a href="#"><i class="icon-plus-sign"></i>Tutorials</a></li>
+                    <li><a href="#"><i class="icon-plus-sign"></i>News</a></li>
+                </ul>
+
+                <!--Popular Posts-->
+                <h5 class="title-bg">Categories</h5>
+                <ul class="post-category-list">
+                    <li><a href="#"><i class="icon-plus-sign"></i>Design</a></li>
+                    <li><a href="#"><i class="icon-plus-sign"></i>Illustration</a></li>
+                    <li><a href="#"><i class="icon-plus-sign"></i>Tutorials</a></li>
+                    <li><a href="#"><i class="icon-plus-sign"></i>News</a></li>
                 </ul>
             </div>
-        </article>
-
-
-        <!-- Pagination -->
-        <div class="pagination">
-            <ul>
-                <li class="active"><a href="#">Prev</a></li>
-                <li class="active"><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">Next</a></li>
-            </ul>
-        </div>
     </div>
-
-    <!-- Blog Sidebar
-    ================================================== -->
-    <div class="span4 sidebar">
-
-        <!--Search-->
-        <section>
-            <div class="input-append">
-                <form action="#">
-                    <input id="appendedInputButton" size="16" type="text" placeholder="Search"><button class="btn" type="button"><i class="icon-search"></i></button>
-                </form>
-            </div>
-        </section>
-
-        <!--Categories-->
-        <h5 class="title-bg">Categories</h5>
-        <ul class="post-category-list">
-            <li><a href="#"><i class="icon-plus-sign"></i>Design</a></li>
-            <li><a href="#"><i class="icon-plus-sign"></i>Illustration</a></li>
-            <li><a href="#"><i class="icon-plus-sign"></i>Tutorials</a></li>
-            <li><a href="#"><i class="icon-plus-sign"></i>News</a></li>
-        </ul>
-
-        <!--Popular Posts-->
-        <h5 class="title-bg">Categories</h5>
-        <ul class="post-category-list">
-            <li><a href="#"><i class="icon-plus-sign"></i>Design</a></li>
-            <li><a href="#"><i class="icon-plus-sign"></i>Illustration</a></li>
-            <li><a href="#"><i class="icon-plus-sign"></i>Tutorials</a></li>
-            <li><a href="#"><i class="icon-plus-sign"></i>News</a></li>
-        </ul>
-
-
 

@@ -2,159 +2,100 @@
 @{
     ViewData["Title"] = "Events";
 }
-
+<!-- Blog Content
+================================================== -->
 <div class="row">
-    <!-- Begin Bottom Section -->
-    <!-- Blog Preview
+
+    <!-- Blog Posts
     ================================================== -->
-    <div class="span6">
+    <div class="span8 blog">
 
-        <h5 class="title-bg">
-            From the Blog
-            <small>All the latest news</small>
-            <button id="btn-blog-next" class="btn btn-inverse btn-mini" type="button">&raquo;</button>
-            <button id="btn-blog-prev" class="btn btn-inverse btn-mini" type="button">&laquo;</button>
-        </h5>
 
-        <div id="blogCarousel" class="carousel slide ">
+        <!-- Blog Post 1 -->
+        <article class="clearfix">
+            @*@{
+                int numItems = Model.Count();
+                if (numItems > 0)
+                {*@
+            @*@foreach (var item in Model)
+                {*@
+            @foreach (var items in Model)
+            {
+            <a href="blog-single.htm"><img src="~/img/gallery/gallery-img-1-4col.jpg" alt="Post Thumb" class="align-left"></a>
+            <h4 class="title-bg"><a href="blog-single.htm">@Html.DisplayFor(modelItem => items.eventName) </a></h4>
+            <p>@Html.DisplayFor(modelItem => items.eventDescription) </p>
+            
+            
+            <a asp-action="Details" asp-controller="Events" asp-route-id="@items.eventID" class="btn btn-default btn-xs">See Event</a>
+            }
 
-            <!-- Carousel items -->
-            <div class="carousel-inner">
 
-                <!-- Blog Item 1 -->
-                <div class="active item">
-                    <a href="blog-single.htm"><img src="~/img/gallery/blog-med-img-1.jpg" alt="" class="align-left blog-thumb-preview" /></a>
-                    <div class="post-info clearfix">
-                        @foreach (var item in Model)
-                        {
-                            <h4>@Html.DisplayFor(modelItem => item.eventName)</h4>
+            <div class="post-summary-footer"></div>
 
-                            <ul class="blog-details-preview">
-                                <li><i class="icon-calendar"></i>@Html.DisplayNameFor(model => model.eventDate): @Html.DisplayFor(modelItem => item.eventDate)
-                                <li>
-                                <li><i class="icon-time"></i>@Html.DisplayNameFor(model => model.eventTime): @Html.DisplayFor(modelItem => item.eventTime)
-                                <li>
-                                <li><i class="glyphicon glyphicon-usd"></i>@Html.DisplayNameFor(model => model.eventCost): @Html.DisplayFor(modelItem => item.eventCost)
-                                <li>
-                                <li><i class="icon-road"></i>@Html.DisplayNameFor(model => model.eventLocation): @Html.DisplayFor(modelItem => item.eventLocation)
-                                <li>
-                            </ul>
-                        }
+            @*}*@
+
+            @*}
+                    else
+                    {
+                    <div class="alert alert-danger" role="alert">
+                        There are no events in this category.
                     </div>
+                    }
+                }*@
 
-                    <p class="blog-summary">
-                        @foreach (var item in Model)
-                        {
-                            @Html.DisplayFor(modelItem => item.eventDescription)
-                        }
-                    <p>
-                </div>
+        </article>
 
-                <!-- Blog Item 2 -->
-                <div class="item">
-                    <a href="blog-single.htm"><img src="img/gallery/blog-med-img-1.jpg" alt="" class="align-left blog-thumb-preview" /></a>
-                    <div class="post-info clearfix">
-                        <h4><a href="blog-single.htm">A great artist is always before his time</a></h4>
-                        <ul class="blog-details-preview">
-                            <li><i class="icon-calendar"></i><strong>Posted on:</strong> Sept 4, 2015
-                            <li>
-                            <li><i class="icon-user"></i><strong>Posted by:</strong> <a href="#" title="Link">Admin</a>
-                            <li>
-                            <li><i class="icon-comment"></i><strong>Comments:</strong> <a href="#" title="Link">12</a>
-                            <li>
-                            <li><i class="icon-tags"></i> <a href="#">photoshop</a>, <a href="#">tutorials</a>, <a href="#">illustration</a>
-                        </ul>
-                    </div>
-                    <div>
-                        @foreach (var item in Model)
-                        {
-                        @Html.DisplayFor(modelItem => item.eventDescription)
-                        }
-                    </div>
-                </div>
 
-                <!-- Blog Item 3 -->
-                <div class="item">
-                    <a href="blog-single.htm"><img src="~/img/gallery/blog-med-img-1.jpg" alt="" class="align-left blog-thumb-preview" /></a>
-                    <div class="post-info clearfix">
-                        <h4><a href="blog-single.htm">Is art everything to anybody?</a></h4>
-                        <ul class="blog-details-preview">
-                            <li><i class="icon-calendar"></i><strong>Posted on:</strong> Sept 4, 2015
-                            <li>
-                            <li><i class="icon-user"></i><strong>Posted by:</strong> <a href="#" title="Link">Admin</a>
-                            <li>
-                            <li><i class="icon-comment"></i><strong>Comments:</strong> <a href="#" title="Link">12</a>
-                            <li>
-                            <li><i class="icon-tags"></i> <a href="#">photoshop</a>, <a href="#">tutorials</a>, <a href="#">illustration</a>
-                        </ul>
-                    </div>
-                    <p class="blog-summary">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In interdum felis fermentum
-                        ipsum molestie sed porttitor ligula rutrum. Vestibulum lectus tellus, aliquet et iaculis sed, volutpat
-                        vel erat. <a href="#">Read more</a>
-                    <p>
-                </div>
 
-            </div>
+        <!-- Pagination -->
+        <div class="pagination">
+            <ul>
+                <li class="active"><a href="#">Prev</a></li>
+                <li class="active"><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">Next</a></li>
+            </ul>
         </div>
+
     </div>
 
-    <!-- Client Area
+    <!-- Blog Sidebar
     ================================================== -->
-    <div class="span6">
+    <div class="span4 sidebar">
 
-        <h5 class="title-bg">
-            Recent Clients
-            <small>That love us</small>
-            <button id="btn-client-next" class="btn btn-inverse btn-mini" type="button">&raquo;</button>
-            <button id="btn-client-prev" class="btn btn-inverse btn-mini" type="button">&laquo;</button>
-        </h5>
-
-        <!-- Client Testimonial Slider-->
-        <div id="clientCarousel" class="carousel slide no-margin">
-            <!-- Carousel items -->
-            <div class="carousel-inner">
-
-                <div class="active item">
-                    <p class="quote-text">
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In interdum felis fermentum
-                        ipsum molestie sed porttitor ligula rutrum. Morbi blandit ultricies ultrices. Vivamus nec lectus sed orci
-                        molestie molestie."<cite>- Client Name, Big Company</cite>
-                    </p>
-                </div>
-
-                <div class="item">
-                    <p class="quote-text">
-                        "Adipiscing elit. In interdum felis fermentum ipsum molestie sed porttitor ligula rutrum.
-                        Morbi blandit ultricies ultrices. Vivamus nec lectus sed orci molestie molestie."<cite>
-                            - Another Client Name,
-                            Company Name
-                        </cite>
-                    </p>
-                </div>
-
-                <div class="item">
-                    <p class="quote-text">
-                        "Mauris eget tellus sem. Cras sollicitudin sem eu elit aliquam quis condimentum nulla suscipit.
-                        Nam sed magna ante. Ut eget suscipit mauris."<cite>- On More Client, The Company</cite>
-                    </p>
-                </div>
-
+        <!--Search-->
+        <section>
+            <div class="input-append">
+                <form action="#">
+                    <input id="appendedInputButton" size="16" type="text" placeholder="Search"><button class="btn" type="button"><i class="icon-search"></i></button>
+                </form>
             </div>
-        </div>
+        </section>
 
-        <!-- Client Logo Thumbs-->
-        <ul class="client-logos">
-            <li><a href="#" class="client-link"><img src="~/img/gallery/facebook-img.jpg" alt="Client"></a></li>
-            <li><a href="#" class="client-link"><img src="~/img/gallery/client-img-2.png" alt="Client"></a></li>
-            <li><a href="#" class="client-link"><img src="~/img/gallery/client-img-3.png" alt="Client"></a></li>
-            <li><a href="#" class="client-link"><img src="~/img/gallery/client-img-4.png" alt="Client"></a></li>
-            <li><a href="#" class="client-link"><img src="~/img/gallery/client-img-5.png" alt="Client"></a></li>
+        <!--Categories-->
+        <h5 class="title-bg">Categories</h5>
+        <ul class="post-category-list">
+            <li><a asp-controller="Events" asp-action="Index" asp-route-id="1"><i class="icon-plus-sign"></i>Festivals</a></li>
+            <li><a asp-controller="Events" asp-action="Index" asp-route-id="2"><i class="icon-plus-sign"></i>Self Betterment</a></li>
+            <li><a asp-controller="Events" asp-action="Index" asp-route-id="3"><i class="icon-plus-sign"></i>Entertainment</a></li>
+            <li><a asp-controller="Events" asp-action="Index" asp-route-id="4"><i class="icon-plus-sign"></i>Social</a></li>
         </ul>
 
+        <!--Popular Posts-->
+        <h5 class="title-bg">Categories</h5>
+        <ul class="post-category-list">
+            <li><a href="#"><i class="icon-plus-sign"></i>Design</a></li>
+            <li><a href="#"><i class="icon-plus-sign"></i>Illustration</a></li>
+            <li><a href="#"><i class="icon-plus-sign"></i>Tutorials</a></li>
+            <li><a href="#"><i class="icon-plus-sign"></i>News</a></li>
+        </ul>
     </div>
+</div>
 
-</div><!-- End Bottom Section --><p>
+
+
     <a asp-action="Create">Create New</a>
 </p>
 <table class="table">
@@ -230,3 +171,5 @@
         }
     </tbody>
 </table>
+
+

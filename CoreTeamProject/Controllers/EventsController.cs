@@ -162,9 +162,12 @@ namespace CoreTeamProject.Controllers
         }
 
         public async Task<IActionResult> Listing(int? SelectedDepartment)
-        {       
-            return View();
+        {
+            var events = await _context.Event.ToListAsync();
+
+            return View(events);
         }
+
 
         private bool EventsExists(int id)
         {
