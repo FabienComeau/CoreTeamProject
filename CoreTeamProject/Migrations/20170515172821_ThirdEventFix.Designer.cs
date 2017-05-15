@@ -8,9 +8,10 @@ using CoreTeamProject.Data;
 namespace CoreTeamProject.Migrations
 {
     [DbContext(typeof(EventContext))]
-    partial class EventContextModelSnapshot : ModelSnapshot
+    [Migration("20170515172821_ThirdEventFix")]
+    partial class ThirdEventFix
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.1")

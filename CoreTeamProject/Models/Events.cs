@@ -18,7 +18,7 @@ namespace CoreTeamProject.Models
         public string eventName { get; set; }
 
         [Required]
-        [StringLength(500, MinimumLength = 3)]
+        [StringLength(2000, MinimumLength = 3)]
         [Display(Name = "Description")]
         public string eventDescription { get; set; }
 
@@ -55,8 +55,16 @@ namespace CoreTeamProject.Models
         [Display(Name = "Cost")]
         public decimal eventCost { get; set; }
 
-        
+
+        public string Facebook { get; set; }
+        public string Twitter { get; set; }
+        public string Website { get; set; }
+        public string Instagram { get; set; }
+
+
+
         public int subCategoryID { get; set; } //FK 
+        //public string UserId { get; set; } 
 
         // ---------- Navagation Properties ---------- //
         public virtual SubCategories Subcategory { get; set; }

@@ -156,7 +156,7 @@ namespace CoreTeamProject.Controllers
             return RedirectToAction("Index");
         }
 
-        public async Task<IActionResult> Browser(int? SelectedDepartment)
+        public IActionResult Browser(int? SelectedDepartment)
         {
             return View();
         }

@@ -8,9 +8,10 @@ using CoreTeamProject.Data;
 namespace CoreTeamProject.Migrations
 {
     [DbContext(typeof(EventContext))]
-    partial class EventContextModelSnapshot : ModelSnapshot
+    [Migration("20170515171940_SecondEventFix")]
+    partial class SecondEventFix
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.1")
@@ -37,6 +38,8 @@ namespace CoreTeamProject.Migrations
                     b.Property<string>("Instagram");
 
                     b.Property<string>("Twitter");
+
+                    b.Property<string>("UserId");
 
                     b.Property<string>("Website");
 

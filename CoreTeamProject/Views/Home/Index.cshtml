@@ -17,15 +17,39 @@
     <!-- Headline Text
     ================================================== -->
     <div class="span4">
-       
-        @*<h3>
-            Welcome to Piccolo. <br />
-            A Big Theme in a Small Package.
-        </h3>
-        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pretium vulputate magna sit amet blandit.</p>
-        <p>Cras rutrum, massa non blandit convallis, est lacus gravida enim, eu fermentum ligula orci et tortor. In sit amet nisl ac leo pulvinar molestie. 
-           Morbi blandit ultricies ultrices.</p>
-        <a href="#"><i class="icon-plus-sign"></i>Read More</a>*@
+    @{
+        <form asp-controller="Account" asp-action="Login" asp-route-returnurl="@ViewData["ReturnUrl"]" method="post" class="form-horizontal">
+            <h4>Account Log In</h4>
+            <div class="form-group">
+                <label>Username:</label>
+                <div>
+                    <input type="text" class="form-control" />
+                    <span class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <div class="col-md-10">
+                    <input type="password" class="form-control" />
+                    <span class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div>
+                    <button type="submit" class="btn btn-default">Log in</button>
+                </div>
+            </div>
+            <p>
+                <a href="#">Register as a new user?</a>
+            </p>
+            <p>
+                <a href="#">Forgot your password?</a>
+            </p>
+
+        </form>
+    }
+
     </div>
 </div><!-- End Headline -->
 
