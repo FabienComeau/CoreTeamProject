@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using CoreTeamProject.Data;
 
-namespace CoreTeamProject.Data.Migrations
+namespace CoreTeamProject.Migrations.ApplicationDb
 {
     [DbContext(typeof(ApplicationDbContext))]
     partial class ApplicationDbContextModelSnapshot : ModelSnapshot

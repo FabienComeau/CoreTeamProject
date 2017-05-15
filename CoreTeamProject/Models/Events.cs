@@ -64,7 +64,8 @@ namespace CoreTeamProject.Models
 
 
         public int subCategoryID { get; set; } //FK 
-        //public string UserId { get; set; } 
+        [StringLength(450)]
+        public string UserId { get; set; } 
 
         // ---------- Navagation Properties ---------- //
         public virtual SubCategories Subcategory { get; set; }

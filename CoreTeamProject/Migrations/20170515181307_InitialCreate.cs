@@ -5,53 +5,21 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace CoreTeamProject.Migrations
 {
-    public partial class CreateEvent : Migration
+    public partial class InitialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropColumn(
-                name: "Discriminator",
-                table: "Category");
-
-            migrationBuilder.DropColumn(
-                name: "eventCost",
-                table: "Category");
-
-            migrationBuilder.DropColumn(
-                name: "eventDate",
-                table: "Category");
-
-            migrationBuilder.DropColumn(
-                name: "eventDescription",
-                table: "Category");
-
-            migrationBuilder.DropColumn(
-                name: "eventEmail",
-                table: "Category");
-
-            migrationBuilder.DropColumn(
-                name: "eventID",
-                table: "Category");
-
-            migrationBuilder.DropColumn(
-                name: "eventLocation",
-                table: "Category");
-
-            migrationBuilder.DropColumn(
-                name: "eventName",
-                table: "Category");
-
-            migrationBuilder.DropColumn(
-                name: "eventPhoneNumber",
-                table: "Category");
-
-            migrationBuilder.DropColumn(
-                name: "subCategoryID",
-                table: "Category");
-
-            migrationBuilder.DropColumn(
-                name: "subCategoryTitle",
-                table: "Category");
+            migrationBuilder.CreateTable(
+                name: "Category",
+                columns: table => new
+                {
+                    categoryID = table.Column<int>(nullable: false),
+                    categoryTitle = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Category", x => x.categoryID);
+                });
 
             migrationBuilder.CreateTable(
                 name: "Subcategory",
@@ -79,9 +47,13 @@ namespace CoreTeamProject.Migrations
                 {
                     eventID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Facebook = table.Column<string>(nullable: true),
+                    Instagram = table.Column<string>(nullable: true),
+                    Twitter = table.Column<string>(nullable: true),
+                    Website = table.Column<string>(nullable: true),
                     eventCost = table.Column<decimal>(type: "money", nullable: false),
                     eventDate = table.Column<DateTime>(nullable: false),
-                    eventDescription = table.Column<string>(maxLength: 500, nullable: false),
+                    eventDescription = table.Column<string>(maxLength: 2000, nullable: false),
                     eventEmail = table.Column<string>(nullable: true),
                     eventLocation = table.Column<string>(maxLength: 100, nullable: false),
                     eventName = table.Column<string>(maxLength: 200, nullable: false),
@@ -119,61 +91,8 @@ namespace CoreTeamProject.Migrations
             migrationBuilder.DropTable(
                 name: "Subcategory");
 
-            migrationBuilder.AddColumn<string>(
-                name: "Discriminator",
-                table: "Category",
-                nullable: false,
-                defaultValue: "");
-
-            migrationBuilder.AddColumn<double>(
-                name: "eventCost",
-                table: "Category",
-                nullable: true);
-
-            migrationBuilder.AddColumn<DateTime>(
-                name: "eventDate",
-                table: "Category",
-                nullable: true);
-
-            migrationBuilder.AddColumn<string>(
-                name: "eventDescription",
-                table: "Category",
-                nullable: true);
-
-            migrationBuilder.AddColumn<string>(
-                name: "eventEmail",
-                table: "Category",
-                nullable: true);
-
-            migrationBuilder.AddColumn<int>(
-                name: "eventID",
-                table: "Category",
-                nullable: true);
-
-            migrationBuilder.AddColumn<string>(
-                name: "eventLocation",
-                table: "Category",
-                nullable: true);
-
-            migrationBuilder.AddColumn<string>(
-                name: "eventName",
-                table: "Category",
-                nullable: true);
-
-            migrationBuilder.AddColumn<string>(
-                name: "eventPhoneNumber",
-                table: "Category",
-                nullable: true);
-
-            migrationBuilder.AddColumn<int>(
-                name: "subCategoryID",
-                table: "Category",
-                nullable: true);
-
-            migrationBuilder.AddColumn<string>(
-                name: "subCategoryTitle",
-                table: "Category",
-                nullable: true);
+            migrationBuilder.DropTable(
+                name: "Category");
         }
     }
 }

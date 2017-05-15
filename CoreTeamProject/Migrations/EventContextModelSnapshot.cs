@@ -38,6 +38,9 @@ namespace CoreTeamProject.Migrations
 
                     b.Property<string>("Twitter");
 
+                    b.Property<string>("UserId")
+                        .HasMaxLength(450);
+
                     b.Property<string>("Website");
 
                     b.Property<decimal>("eventCost")

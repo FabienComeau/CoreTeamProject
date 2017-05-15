@@ -5,11 +5,11 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using CoreTeamProject.Data;
 
-namespace CoreTeamProject.Data.Migrations
+namespace CoreTeamProject.Migrations.ApplicationDb
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20170502175659_Initial_Identity")]
-    partial class Initial_Identity
+    [Migration("20170515181932_InitialCreateIdentity")]
+    partial class InitialCreateIdentity
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

@@ -8,8 +8,8 @@ using CoreTeamProject.Data;
 namespace CoreTeamProject.Migrations
 {
     [DbContext(typeof(EventContext))]
-    [Migration("20170503172601_CreateEvent")]
-    partial class CreateEvent
+    [Migration("20170515182247_UserId")]
+    partial class UserId
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -19,8 +19,7 @@ namespace CoreTeamProject.Migrations
 
             modelBuilder.Entity("CoreTeamProject.Models.Categories", b =>
                 {
-                    b.Property<int>("categoryID")
-                        .ValueGeneratedOnAdd();
+                    b.Property<int>("categoryID");
 
                     b.Property<string>("categoryTitle");
 
@@ -34,6 +33,17 @@ namespace CoreTeamProject.Migrations
                     b.Property<int>("eventID")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<string>("Facebook");
+
+                    b.Property<string>("Instagram");
+
+                    b.Property<string>("Twitter");
+
+                    b.Property<string>("UserId")
+                        .HasMaxLength(450);
+
+                    b.Property<string>("Website");
+
                     b.Property<decimal>("eventCost")
                         .HasColumnType("money");
 
@@ -41,7 +51,7 @@ namespace CoreTeamProject.Migrations
 
                     b.Property<string>("eventDescription")
                         .IsRequired()
-                        .HasMaxLength(500);
+                        .HasMaxLength(2000);
 
                     b.Property<string>("eventEmail");
 

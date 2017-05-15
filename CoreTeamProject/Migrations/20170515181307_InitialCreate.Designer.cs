@@ -8,8 +8,8 @@ using CoreTeamProject.Data;
 namespace CoreTeamProject.Migrations
 {
     [DbContext(typeof(EventContext))]
-    [Migration("20170515171940_SecondEventFix")]
-    partial class SecondEventFix
+    [Migration("20170515181307_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -38,8 +38,6 @@ namespace CoreTeamProject.Migrations
                     b.Property<string>("Instagram");
 
                     b.Property<string>("Twitter");
-
-                    b.Property<string>("UserId");
 
                     b.Property<string>("Website");
 
