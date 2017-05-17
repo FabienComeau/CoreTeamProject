@@ -7,16 +7,20 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using CoreTeamProject.Data;
 using CoreTeamProject.Models;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Hosting;
 
 namespace CoreTeamProject.Controllers
 {
     public class EventsController : Controller
     {
         private readonly EventContext _context;
+        private IHostingEnvironment _hostingEnv;
 
-        public EventsController(EventContext context)
+        public EventsController(EventContext context, IHostingEnvironment env)
         {
-            _context = context;    
+            _context = context;
+            _hostingEnv = env;
         }
         
 
@@ -61,10 +65,24 @@ namespace CoreTeamProject.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("eventID,eventName,eventDescription,eventDate,eventTime,eventLocation,eventEmail,eventPhoneNumber,eventCost,subCategoryID")] Events events)
+        public async Task<IActionResult> Create([Bind("eventID,eventName,eventDescription,eventDate,eventTime,eventLocation,eventEmail,eventPhoneNumber,eventCost,subCategoryID")] IList<IFormFile> files, Events events)
         {
             if (ModelState.IsValid)
             {
+                foreach(var file in files)
+                {
+                    // rename the file to userId.jpg
+                    var filename = events.eventID + System.IO.Path.GetExtension(file.FileName);
+                    // tag on the path where we want to upload the image 
+                    filename = _hostingEnv.WebRootPath + $@"\img\events\{filename}";
+
+                    using (System.IO.FileStream fs = System.IO.File.Create(filename))
+                    {
+                        file.CopyTo(fs);
+                        fs.Flush();
+                    }
+                }
+                
                 _context.Add(events);
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Index");

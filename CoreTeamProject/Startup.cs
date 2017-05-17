@@ -66,6 +66,7 @@ namespace CoreTeamProject
             services.AddTransient<ISmsSender, AuthMessageSender>();
 
             services.AddTransient<AdminstratorSeedData>();
+            services.AddSingleton<IRequestFormDataServices, RequestFormDataServices>();
            
         }
 
