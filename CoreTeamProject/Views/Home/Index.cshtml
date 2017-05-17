@@ -18,8 +18,9 @@
     ================================================== -->
     <div class="span4">
     @{
-        <form asp-controller="Account" asp-action="Login" asp-route-returnurl="@ViewData["ReturnUrl"]" method="post" class="form-horizontal">
+        <form asp-controller="Home" asp-action="Index" asp-route-returnurl="@ViewData["ReturnUrl"]" method="post" class="form-horizontal">
             <h4>Account Log In</h4>
+            <div asp-validation-summary="All" class="text-danger" ></div>
             <div class="form-group">
                 <label>Username:</label>
                 <div>
@@ -37,11 +38,11 @@
 
             <div class="form-group">
                 <div>
-                    <button type="submit" class="btn btn-default">Log in</button>
+                    <button type="submit" class="btn btn-mini btn-inverse">Log In</button>
                 </div>
             </div>
             <p>
-                <a href="#">Register as a new user?</a>
+                <a asp-controller="Account" asp-action="Register">Register as new user?</a>
             </p>
             <p>
                 <a href="#">Forgot your password?</a>

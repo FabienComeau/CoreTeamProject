@@ -52,15 +52,25 @@ namespace CoreTeamProject
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
+            services.AddIdentity<ApplicationUser, IdentityRole>(config =>
+            {
+                config.SignIn.RequireConfirmedEmail = false;  //TO DO!  CHANGE TO TRUE BEFORE DUE
+                config.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
+                config.Lockout.MaxFailedAccessAttempts = 3;
+            });
+
             services.AddMvc();
 
             // Add application services.
             services.AddTransient<IEmailSender, AuthMessageSender>();
             services.AddTransient<ISmsSender, AuthMessageSender>();
+
+            services.AddTransient<AdminstratorSeedData>();
+           
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory,EventContext context)
+        public async void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory,EventContext context, AdminstratorSeedData seeder)
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
@@ -90,6 +100,7 @@ namespace CoreTeamProject
             });
 
 
+            await seeder.EnsureSeedData();
            // DbInitializer.Initialize(context);
         }
     }

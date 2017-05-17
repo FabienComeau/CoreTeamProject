@@ -8,7 +8,7 @@ namespace CoreTeamProject.Models.AccountViewModels
 {
     public class LoginViewModel
     {
-        [Required]
+        //[Required]
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
