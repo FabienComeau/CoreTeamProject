@@ -203,7 +203,7 @@ ul.nav li.dropdown:hover ul.dropdown-menu{ display: block; }
 @media (min-width: 1200px) {
 	.gallery-hover-6col {width:170px; height:139px;}
 	.gallery-hover-4col {width:570px; height:282px;}
-	.gallery-hover-3col {width:370px; height:300px;}
+	.gallery-hover-3col {width:270px; height:220px;}
 	.gallery-hover-4col-cir {width:270px; height:270px;}
 	.gallery-hover-4col-cir .gallery-icons {top: 45%; left:34%;}
 }
@@ -212,7 +212,7 @@ ul.nav li.dropdown:hover ul.dropdown-menu{ display: block; }
 @media (min-width: 980px) and (max-width: 1199px) {
 	.gallery-hover-6col {width:140px; height:114px;}
 	.gallery-hover-4col {width:570px; height:282px;}
-	.gallery-hover-3col {width:300px; height:243px;}
+	.gallery-hover-3col {width:270px; height:220px;}
 	.gallery-hover-4col-cir {width:220px; height:220px;}
 	.gallery-hover-4col-cir .gallery-icons {top: 42%; left:29%;}
 
@@ -797,5 +797,6 @@ a.accordion-toggle{background: #f5f5f5;}
 .form-control input {
     padding: 10px 10px !important;
 }
+
 
 

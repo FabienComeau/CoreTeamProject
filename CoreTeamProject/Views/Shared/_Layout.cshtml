@@ -1,4 +1,7 @@
-﻿@inject Microsoft.ApplicationInsights.AspNetCore.JavaScriptSnippet JavaScriptSnippet
+﻿
+
+@inject Microsoft.ApplicationInsights.AspNetCore.JavaScriptSnippet JavaScriptSnippet
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -92,9 +95,9 @@
                         <li class="dropdown active">
                             <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>                            
                         </li>
-                        <li><a asp-area="" asp-controller="Events" asp-action="Browser">Browser</a></li>
+                        <li><a asp-area="" asp-controller="Events" asp-action="Browser">Browse</a></li>
                         <li><a asp-area="" asp-controller="Events" asp-action="Index">Events</a></li>
-                        <li class="dropdown">
+                        @*<li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" href="gallery-4col.htm">Gallery <b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li><a href="gallery-3col.htm">Gallery 3 Column</a></li>
@@ -103,7 +106,7 @@
                                 <li><a href="gallery-4col-circle.htm">Gallery 4 Round</a></li>
                                 <li><a href="gallery-single.htm">Gallery Single</a></li>
                             </ul>
-                        </li>
+                        </li>*@
                         @*<li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" href="blog-style1.htm">Blog <b class="caret"></b></a>
                             <ul class="dropdown-menu">
@@ -114,7 +117,7 @@
                                 <li><a href="blog-single.htm">Blog Single</a></li>
                             </ul>
                         </li>*@
-                        <li><a href="page-contact.htm">Contact</a></li>
+                        <li><a href="page-contact.htm">Log Out</a></li>
                     </ul>
 
                 </div>
