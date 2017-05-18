@@ -18,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="wwwroot\img\events\2.jpg" />
     <Content Include="wwwroot\img\gallery\category-img-1.jpg" />
     <Content Include="wwwroot\img\gallery\category-img-2.jpg" />
     <Content Include="wwwroot\img\gallery\category-img-3.jpg" />
@@ -58,7 +59,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Data\Migrations\" />
-    <Folder Include="wwwroot\img\events\" />
   </ItemGroup>
 
 </Project>

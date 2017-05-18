@@ -24,7 +24,7 @@
         <div class="form-group">
             <label asp-for="eventDescription" class="col-md-2 control-label"></label>
             <div class="col-md-10">
-                <textarea rows="4" cols="50"></textarea>
+                <textarea rows="4" cols="50" asp-for="eventDescription"></textarea>
                 @*<input type="text" asp-for="eventDescription" class="form-control" />*@
                 <span asp-validation-for="eventDescription" class="text-danger"></span>
             </div>

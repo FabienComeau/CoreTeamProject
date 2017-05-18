@@ -69,7 +69,10 @@ namespace CoreTeamProject.Controllers
         {
             if (ModelState.IsValid)
             {
-                foreach(var file in files)
+                _context.Add(events);
+                await _context.SaveChangesAsync();
+
+                foreach (var file in files)
                 {
                     // rename the file to userId.jpg
                     var filename = events.eventID + System.IO.Path.GetExtension(file.FileName);
@@ -82,10 +85,10 @@ namespace CoreTeamProject.Controllers
                         fs.Flush();
                     }
                 }
-                
-                _context.Add(events);
-                await _context.SaveChangesAsync();
+
+
                 return RedirectToAction("Index");
+
             }
             ViewData["subCategoryID"] = new SelectList(_context.SubCategory, "subCategoryID", "subCategoryID", events.subCategoryID);
             return View(events);

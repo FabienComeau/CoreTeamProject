@@ -13,6 +13,7 @@
 
         <!-- Blog Post 1 -->
         <article class="clearfix">
+          
             @*@{
                 int numItems = Model.Count();
                 if (numItems > 0)
@@ -21,7 +22,7 @@
                 {*@
             @foreach (var items in Model)
             {
-            <a href="blog-single.htm"><img src="~/img/gallery/gallery-img-1-4col.jpg" alt="Post Thumb" class="align-left"></a>
+            <a href="blog-single.htm"><img src="~/img/events/@(items.eventID + ".jpg")" alt="Post Thumb" class="align-left" style="height:300px;"></a>
             <h4 class="title-bg"><a href="blog-single.htm">@Html.DisplayFor(modelItem => items.eventName) </a></h4>
             <p>@Html.DisplayFor(modelItem => items.eventDescription) </p>
             
