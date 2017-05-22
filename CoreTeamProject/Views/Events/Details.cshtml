@@ -25,7 +25,7 @@
 
                 <!-- Blog Item 1 -->
                 <div class="active item">
-                    <a href="blog-single.htm"><img src="~/img/gallery/blog-med-img-1.jpg" alt="" class="align-left blog-thumb-preview" /></a>
+                    <a href="blog-single.htm"><img src="~/img/events/@(Model.eventID + ".jpg")" alt="" class="align-left blog-thumb-preview" style="max-height:300px;"/></a>
                     <div class="post-info clearfix">
                         @*@foreach (var item in Model)    
                         {*@

@@ -1,0 +1,41 @@
+﻿
+
+@if (User.Identity.IsAuthenticated)
+{
+    if (User.IsInRole("admin"))
+    {
+        <li><a asp-controller="Events" asp-action="Listing">Manage Events</a></li>
+                <li><a asp-controller="User" asp-action="Index">Manage Users</a></li>
+                <li>
+                    <button type="submit" class="btn btn-link navbar-btn navbar-link"
+                            style=" font-family: 'Oswald', sans-serif;
+                            font-weight: normal;
+                            text-shadow: none;
+                            text-transform: uppercase;
+                            font-size: 12px;
+                            /*padding: 10px 15px 10px;*/">
+                        Log out
+                    </button>
+                </li>
+
+    }
+    else if (User.IsInRole("user"))
+    {
+        <li><a asp-controller="Events" asp-action="Create">Add Events</a></li>
+        <li>
+            <button type="submit" class="btn btn-link navbar-btn navbar-link"
+                    style=" font-family: 'Oswald', sans-serif;
+                            font-weight: normal;
+                            text-shadow: none;
+                            text-transform: uppercase;
+                            font-size: 12px;
+                            /*padding: 10px 15px 10px;*/">
+                Log out
+            </button>
+        </li>
+
+    }
+}
+else { 
+<li><a asp-controller="Account" asp-action="Register">Register</a></li>
+}

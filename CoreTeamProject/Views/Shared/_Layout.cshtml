@@ -90,36 +90,15 @@
             ================================================== -->
             <div class="span7 navigation">
                 <div class="navbar hidden-phone">
-
-                    <ul class="nav">
-                        <li class="dropdown active">
-                            <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>                            
-                        </li>
-                        <li><a asp-area="" asp-controller="Events" asp-action="Browser">Browse</a></li>
-                        <li><a asp-area="" asp-controller="Events" asp-action="Index">Events</a></li>
-                        @*<li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="gallery-4col.htm">Gallery <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="gallery-3col.htm">Gallery 3 Column</a></li>
-                                <li><a href="gallery-4col.htm">Gallery 4 Column</a></li>
-                                <li><a href="gallery-6col.htm">Gallery 6 Column</a></li>
-                                <li><a href="gallery-4col-circle.htm">Gallery 4 Round</a></li>
-                                <li><a href="gallery-single.htm">Gallery Single</a></li>
+                    <form asp-area="" asp-controller="Account" asp-action="Logout" method="post" id="logoutForm" class="navbar-right">
+                        <ul class="nav navbar-nav navbar-right">
+                                <li class="dropdown active">
+                                    <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                                </li>
+                                <li><a asp-area="" asp-controller="Events" asp-action="Browser">Browse</a></li>
+                                @await Html.PartialAsync("_MenuPartial")
                             </ul>
-                        </li>*@
-                        @*<li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="blog-style1.htm">Blog <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="blog-style1.htm">Blog Style 1</a></li>
-                                <li><a href="blog-style2.htm">Blog Style 2</a></li>
-                                <li><a href="blog-style3.htm">Blog Style 3</a></li>
-                                <li><a href="blog-style4.htm">Blog Style 4</a></li>
-                                <li><a href="blog-single.htm">Blog Single</a></li>
-                            </ul>
-                        </li>*@
-                        <li><a href="page-contact.htm">Log Out</a></li>
-                    </ul>
-
+                        </form>
                 </div>
 
                 <!-- Mobile Nav
@@ -158,91 +137,23 @@
             </div>
 
         </div><!-- End Header -->
+    </div>
+
         <div class="container body-content">
             @RenderBody()            
         </div>
         <div class="footer-container">
-            <!-- Begin Footer -->
-            <div class="container">
-                @*<div class="row footer-row">
-                    <div class="span3 footer-col">
-                        <h5>About Us</h5>
-                    </div>
-                    <div class="span3">
-                        <img src="img/piccolo-footer-logo.png" alt="Piccolo" /><br /><br />
-                    </div>
-                        <address>
-                            <strong>Design Team</strong><br />
-                            123 Main St, Suite 500<br />
-                            New York, NY 12345<br />
-                        </address>
-                        </div>*@
-                    @*<div class="span9">
-                        <div class="right">
-                            <ul class="social-icons">
-                                <li><a href="#" class="social-icon facebook"></a></li>
-                                <li><a href="#" class="social-icon twitter"></a></li>
-                                <li><a href="#" class="social-icon dribble"></a></li>
-                                <li><a href="#" class="social-icon rss"></a></li>
-                                <li><a href="#" class="social-icon forrst"></a></li>
-                            </ul>
-                        </div>
-                    </div>*@
-                    @*<div class="span3 footer-col">
-                        <h5>Latest Tweets</h5>
-                        <ul>
-                            <li><a href="#">@room122</a> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                            <li><a href="#">@room122</a> In interdum felis fermentum ipsum molestie sed porttitor ligula rutrum. Morbi blandit ultricies ultrices.</li>
-                            <li><a href="#">@room122</a> Vivamus nec lectus sed orci molestie molestie. Etiam mattis neque eu orci rutrum aliquam.</li>
-                        </ul>
-                    </div>*@
-                    @*<div class="span3 footer-col">
-                        <h5>Latest Posts</h5>
-                        <ul class="post-list">
-                            <li><a href="#">Lorem ipsum dolor sit amet</a></li>
-                            <li><a href="#">Consectetur adipiscing elit est lacus gravida</a></li>
-                            <li><a href="#">Lectus sed orci molestie molestie etiam</a></li>
-                            <li><a href="#">Mattis consectetur adipiscing elit est lacus</a></li>
-                            <li><a href="#">Cras rutrum, massa non blandit convallis est</a></li>
-                        </ul>
-                    </div>*@
-                    @*<div class="span3 footer-col">
-                        <h5>Flickr Photos</h5>
-                        <ul class="img-feed">
-                            <li><a href="#"><img src="img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
-                            <li><a href="#"><img src="img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
-                            <li><a href="#"><img src="img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
-                            <li><a href="#"><img src="img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
-                            <li><a href="#"><img src="img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
-                            <li><a href="#"><img src="img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
-                            <li><a href="#"><img src="img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
-                            <li><a href="#"><img src="img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
-                            <li><a href="#"><img src="img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
-                            <li><a href="#"><img src="img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
-                            <li><a href="#"><img src="img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
-                            <li><a href="#"><img src="img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
-                        </ul>
-                    </div>*@
-                </div>
-
-                <div class="row">
+                <div class="row" style="background:#02C8A7; border-top:solid 2px #ed3841;">
                     <!-- Begin Sub Footer -->
                     <div class="span12 footer-col footer-sub">
                         <div class="row no-margin">
-                            <div class="span6"><span class="left">Copyright 2012 Piccolo Theme. All rights reserved.</span></div>
-                            @*<div class="span6">
-                                <span class="right">
-                                    <a href="#">Home</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="#">Features</a>
-                                    &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="#">Gallery</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-                                    <a href="#">Blog</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="#">Contact</a>
-                                </span>
-                            </div>*@
+                            <div class="span6" style="color:black;"><span class="left">Copyright 2012 Piccolo Theme. All rights reserved.</span></div>
+                            
                         </div>
                     </div>
                 </div><!-- End Sub Footer -->
 
-            </div>
-        </div><!-- End Footer -->
+            </div><!-- End Footer -->
         <!-- Scroll to Top -->
         <!--<div id="toTop" class="hidden-phone hidden-tablet">Back to Top</div>-->
 

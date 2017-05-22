@@ -194,5 +194,13 @@ namespace CoreTeamProject.Controllers
         {
             return _context.Event.Any(e => e.eventID == id);
         }
+
+        private IQueryable<Events> GetUpcomingEvents()
+        {
+            IQueryable<Events> upcoming = _context.Event.Where(e => e.eventDate > DateTime.Today).OrderBy(e => e.eventName);
+            return upcoming;
+        }
+
+
     }
 }

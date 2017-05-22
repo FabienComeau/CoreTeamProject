@@ -1,0 +1,12 @@
+﻿@model List<CoreTeamProject.Models.Events>
+
+        @foreach (var items in Model)
+        {
+            <li class="span3 gallery-item" data-id="id-1" data-type="illustration">
+                
+                <a href="gallery-single.htm"><img src="~/img/events/@items.eventID + ".jpg")" alt="Gallery"></a>
+                <span class="project-details">@items.eventName</span>
+            </li>
+
+        }
+        <!-- Gallery Item 1 -->

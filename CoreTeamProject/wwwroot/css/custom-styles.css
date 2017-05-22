@@ -79,11 +79,12 @@ blockquote.pull-right {border-right: 5px solid #999;}
 }
 
 .navigation { margin-top:40px; }
-.navigation .navbar { 
-	float:right; background:#f8f8f8;
-	border-bottom: 1px dotted #a9a9a9;
-	border-top: 1px dotted #a9a9a9;
-}
+    .navigation .navbar {
+        float: right;
+        background: #f8f8f8;
+        border-bottom: 2px solid #ed3841;
+        border-top: 2px solid #ed3841;
+    }
 .navbar .nav > li > a { 
 	font-family: "Oswald", sans-serif; 
 	font-weight: normal;
@@ -653,14 +654,16 @@ a.forrst{background-position: -208px 0px;}
 a.forrst:hover {background-position: -208px -47px;}
 
 /**** Sub Footer ****/
-.footer-sub {background: #1f1f1f; padding: 10px 0px;}
+.footer-sub {
+    padding: 10px 0px;
+}
 .footer-sub div div span {padding: 0px 20px;}
 
 
 /**************************************
 / MISC
 **************************************/
-.row {margin-bottom:40px;}
+/*.row {margin-bottom:40px;}*/
 .sub-row30 {margin-bottom:30px;}
 .sub-row20 {margin-bottom:20px;}
 .no-margin {margin-bottom:0px;}

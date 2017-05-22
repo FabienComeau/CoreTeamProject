@@ -54,7 +54,7 @@ namespace CoreTeamProject
 
             services.AddIdentity<ApplicationUser, IdentityRole>(config =>
             {
-                config.SignIn.RequireConfirmedEmail = false;  //TO DO!  CHANGE TO TRUE BEFORE DUE
+                config.SignIn.RequireConfirmedEmail = true;  
                 config.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
                 config.Lockout.MaxFailedAccessAttempts = 3;
             });
@@ -67,6 +67,8 @@ namespace CoreTeamProject
 
             services.AddTransient<AdminstratorSeedData>();
             services.AddSingleton<IRequestFormDataServices, RequestFormDataServices>();
+
+            services.AddScoped<INewsService, NewsService>();
            
         }
 
