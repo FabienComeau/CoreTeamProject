@@ -70,12 +70,12 @@
 
 </head>
 
-<body class="home">
+<body class="home" style="margin-bottom:40px; height:720px;">
     <!-- Color Bars (above header)-->
     <div class="color-bar-1"></div>
     <div class="color-bar-2 color-bg"></div>
 
-    <div class="container">
+    <div class="container wrap">
 
         <div class="row header">
             <!-- Begin Header -->
@@ -92,13 +92,13 @@
                 <div class="navbar hidden-phone">
                     <form asp-area="" asp-controller="Account" asp-action="Logout" method="post" id="logoutForm" class="navbar-right">
                         <ul class="nav navbar-nav navbar-right">
-                                <li class="dropdown active">
-                                    <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                                </li>
-                                <li><a asp-area="" asp-controller="Events" asp-action="Browser">Browse</a></li>
-                                @await Html.PartialAsync("_MenuPartial")
-                            </ul>
-                        </form>
+                            <li class="dropdown active">
+                                <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            </li>
+                            <li><a asp-area="" asp-controller="Events" asp-action="Browser">Browse</a></li>
+                            @await Html.PartialAsync("_MenuPartial")
+                        </ul>
+                    </form>
                 </div>
 
                 <!-- Mobile Nav
@@ -137,51 +137,69 @@
             </div>
 
         </div><!-- End Header -->
-    </div>
 
         <div class="container body-content">
-            @RenderBody()            
+            @RenderBody()
         </div>
-        <div class="footer-container">
-                <div class="row" style="background:#02C8A7; border-top:solid 2px #ed3841;">
-                    <!-- Begin Sub Footer -->
-                    <div class="span12 footer-col footer-sub">
-                        <div class="row no-margin">
-                            <div class="span6" style="color:black;"><span class="left">Copyright 2012 Piccolo Theme. All rights reserved.</span></div>
-                            
-                        </div>
+    </div>
+
+    @* java script for footer. *@
+    <script>
+        $(document).ready(function () {
+
+            var docheight = $(window).height();
+            var footerheight = $('#footer').height();
+            var footertop = $('#footer').position().top + footerheight;
+
+            if (footertop < docheight) {
+                $('#footer').css('margin-top', 3 +(docheight - footertop) + 'px');
+            }
+        });
+
+    </script>
+
+    <div class="navbar-default">
+        <div id="footer" class="footer-container">
+            <div class="row" style="background:#02C8A7; border-top:solid 2px #ed3841;">
+                <!-- Begin Sub Footer -->
+                <div class="span12footer-col footer-sub">
+                    <div class="row no-margin">
+                        <div class="span6" style="color:black;"><span class="left">Copyright 2012 Piccolo Theme. All rights reserved.</span></div>
+
                     </div>
-                </div><!-- End Sub Footer -->
+                </div>
+            </div><!-- End Sub Footer -->
 
-            </div><!-- End Footer -->
-        <!-- Scroll to Top -->
-        <!--<div id="toTop" class="hidden-phone hidden-tablet">Back to Top</div>-->
+        </div><!-- End Footer -->
+    </div>
+    <!-- Scroll to Top -->
+    <!--<div id="toTop" class="hidden-phone hidden-tablet">Back to Top</div>-->
 
 
-        <environment names="Development">
-            <script src="~/lib/jquery/dist/jquery.js"></script>
-            <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
-            
-            <script src="~/js/jquery.flexslider.js"></script>
-            <script src="~/js/jquery.prettyPhoto.js"></script>
-            <script src="~/js/jquery.custom.js" asp-append-version="true"></script>
-        </environment>
-        <environment names="Staging,Production">
-            <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
-                    asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
-                    asp-fallback-test="window.jQuery"
-                    crossorigin="anonymous"
-                    integrity="sha384-K+ctZQ+LL8q6tP7I94W+qzQsfRV2a+AfHIi9k8z8l9ggpc8X+Ytst4yBo/hH+8Fk">
-            </script>
-            <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
-                    asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
-                    asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
-                    crossorigin="anonymous"
-                    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
-            </script>
-            <script src="~/js/site.min.js" asp-append-version="true"></script>
-        </environment>
+    <environment names="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
 
-        @RenderSection("Scripts", required: false)
+        <script src="~/js/jquery.flexslider.js"></script>
+        <script src="~/js/jquery.prettyPhoto.js"></script>
+        <script src="~/js/jquery.custom.js" asp-append-version="true"></script>
+    </environment>
+    <environment names="Staging,Production">
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery"
+                crossorigin="anonymous"
+                integrity="sha384-K+ctZQ+LL8q6tP7I94W+qzQsfRV2a+AfHIi9k8z8l9ggpc8X+Ytst4yBo/hH+8Fk">
+        </script>
+        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
+                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+                crossorigin="anonymous"
+                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
+        </script>
+        <script src="~/js/site.min.js" asp-append-version="true"></script>
+    </environment>
+
+    @RenderSection("Scripts", required: false)
 </body>
 </html>

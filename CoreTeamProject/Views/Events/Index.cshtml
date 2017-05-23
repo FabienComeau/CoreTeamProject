@@ -1,4 +1,5 @@
 @model IEnumerable<CoreTeamProject.Models.Events>
+@inject CoreTeamProject.Services.IRequestFormDataServices FormDataHelper
 @{
     ViewData["Title"] = "Events";
 }
@@ -25,8 +26,8 @@
             <a href="blog-single.htm"><img src="~/img/events/@(items.eventID + ".jpg")" alt="Post Thumb" class="align-left" style="height:300px;"></a>
             <h4 class="title-bg"><a href="blog-single.htm">@Html.DisplayFor(modelItem => items.eventName) </a></h4>
             <p>@Html.DisplayFor(modelItem => items.eventDescription) </p>
-            
-            
+
+
             <a asp-action="Details" asp-controller="Events" asp-route-id="@items.eventID" class="btn btn-default btn-xs">See Event</a>
             }
 
@@ -85,12 +86,13 @@
         </ul>
 
         <!--Popular Posts-->
-        <h5 class="title-bg">Categories</h5>
+        <h5 class="title-bg">Sub-Categories</h5>
         <ul class="post-category-list">
-            <li><a href="#"><i class="icon-plus-sign"></i>Design</a></li>
-            <li><a href="#"><i class="icon-plus-sign"></i>Illustration</a></li>
-            <li><a href="#"><i class="icon-plus-sign"></i>Tutorials</a></li>
-            <li><a href="#"><i class="icon-plus-sign"></i>News</a></li>
+            
+            @foreach (var item in Model)
+            {
+                <li><a asp-controller="Events" asp-action="Index" asp-route-id="@item.subCategoryID"><i class="icon-plus-sign"></i>@FormDataHelper.GetSubCategories().ToString()</a></li>
+            }
         </ul>
     </div>
 </div>
