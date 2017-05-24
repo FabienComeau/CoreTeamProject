@@ -4,11 +4,11 @@
     ViewData["Title"] = "Edit";
 }
 
-<h2>Edit</h2>
+<h2>Edit Events</h2>
 
 <form asp-action="Edit">
     <div class="form-horizontal">
-        <h4>Events</h4>
+        @*<h4>Events</h4>*@
         <hr />
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
     <input type="hidden" asp-for="eventID" />
@@ -22,7 +22,8 @@
         <div class="form-group">
             <label asp-for="eventDescription" class="col-md-2 control-label"></label>
             <div class="col-md-10">
-                <input asp-for="eventDescription" class="form-control" />
+                <textarea rows="4" cols="50" asp-for="eventDescription"></textarea>
+                @*<input asp-for="eventDescription" class="form-control" />*@
                 <span asp-validation-for="eventDescription" class="text-danger"></span>
             </div>
         </div>

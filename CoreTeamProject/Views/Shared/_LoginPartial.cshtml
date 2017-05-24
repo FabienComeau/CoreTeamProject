@@ -15,7 +15,8 @@
                 <a asp-area="" asp-controller="Manage" asp-action="Index" title="Manage" ><h5 style="font-size:20px;">Welcome @UserManager.GetUserName(User)!</h5></a>
             </li>
             <li>
-                <button type="submit" class="btn btn-mini btn-inverse">Log out</button>
+                @*<a asp-action="Index" asp-controller="Manage" class="btn btn-mini btn-inverse">Manage Account</a>*@
+                <button class="btn btn-mini btn-inverse">Log out</button>
             </li>
         </ul>
     </form>

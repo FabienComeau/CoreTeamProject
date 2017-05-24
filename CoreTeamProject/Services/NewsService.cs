@@ -1,5 +1,8 @@
-﻿using CoreTeamProject.Models;
+﻿
+using CoreTeamProject.Data;
+using CoreTeamProject.Models;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,21 +10,23 @@ using System.Threading.Tasks;
 
 namespace CoreTeamProject.Services
 {
-    public class NewsService : INewsService
+    public class NewsService : INewsService 
     {
-        static List<Events> _news;
 
-        static NewsService()
+        private readonly EventContext _context;
+
+        public NewsService(EventContext context)
         {
-            //_news = GetUpcomingEvents();
+            _context = context;
 
-            _news = new List<Events>();
         }
+       
 
 
         public Task<IEnumerable<Events>> GetNews(int threshold)
         {
-            return Task.FromResult<IEnumerable<Events>>(_news.OrderBy(x => x.eventID).Take(threshold).ToList());
+            var _news = _context.Event.ToList();
+            return Task.FromResult<IEnumerable<Events>>(_news.OrderBy(x => x.eventDate).Take(threshold).ToList());
         }
     }
 

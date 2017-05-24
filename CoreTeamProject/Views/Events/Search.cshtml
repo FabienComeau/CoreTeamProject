@@ -1,7 +1,5 @@
-@*@model IEnumerable<CoreTeamProject.Models.Events>*@
-@using CoreTeamProject.Helpers;
-@using CoreTeamProject.Models;
-@model PaginatedList<Events>
+﻿@model IEnumerable<CoreTeamProject.Models.Events>
+@inject CoreTeamProject.Services.IRequestFormDataServices FormDataHelper
 @{
     ViewData["Title"] = "Events";
 }
@@ -15,8 +13,8 @@
 
 
         <!-- Blog Post 1 -->
-        
-          
+        <article class="clearfix">
+
             @*@{
                 int numItems = Model.Count();
                 if (numItems > 0)
@@ -32,13 +30,12 @@
 
 
                     <a asp-action="Details" asp-controller="Events" asp-route-id="@items.eventID" class="btn btn-default btn-xs">See Event</a>
-                </article>
-
-            }
+                    
 
 
                     @*<div class="post-summary-footer"></div>*@
-
+                </article>
+            }
                     @*}*@
 
                     @*}
@@ -49,26 +46,20 @@
                             </div>
                             }
                         }*@
-
-               
+                
 
 
 
         <!-- Pagination -->
-        @{ 
-            var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
-            var nextDisabled = !Model.HasNextPage ? "disabled" : "";
-        }
         <div class="pagination">
-            @*<a asp-action="Index" asp-route-sortOrder="@ViewData["CurrentSort"]" asp-route-currentFilter="@ViewData["CurrentFilter"]" 
-               asp-route-page="@(Model.PageIndex -1)" class="@prevDisabled">Prev</a> |
-            <a asp-action="Index" asp-route-sortOrder="@ViewData["CurrentSort"]" asp-route-currentFilter="@ViewData["CurrentFilter"]" 
-            asp-route-page="@(Model.PageIndex +1)" class="@nextDisabled">Next</a>*@
-
-            <span class="page-number">Page@(Model.TotalPages < Model.PageIndex ? 0 : Model.PageIndex)of @Model.TotalPages</span>
-            <a asp-action="Index"  asp-route-page="@(Model.PageIndex - 1)" class="btn btn-info @prevDisabled btn">Previous</a>
-            <a asp-action="Index"  asp-route-page="@(Model.PageIndex + 1)" class="btn btn-info @nextDisabled btn">Next</a>
-
+            <ul>
+                <li class="active"><a href="#">Prev</a></li>
+                <li class="active"><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">Next</a></li>
+            </ul>
         </div>
 
     </div>
@@ -98,7 +89,7 @@
         <!--Popular Posts-->
         @*<h5 class="title-bg">Sub-Categories</h5>
         <ul class="post-category-list">
-            
+
             @foreach (var item in Model)
             {
                 <li><a asp-controller="Events" asp-action="Index" asp-route-id="@item.subCategoryID"><i class="icon-plus-sign"></i>@FormDataHelper.GetSubCategories().ToString()</a></li>
@@ -109,8 +100,5 @@
 
 
 
-    <a asp-action="Create">Create New</a>
+<a asp-action="Create">Create New</a>
 </p>
-
-
-

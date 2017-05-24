@@ -84,7 +84,8 @@ namespace CoreTeamProject.Controllers
                 else
                 {
                     ModelState.AddModelError(string.Empty, "Invalid login attempt.");
-                    return View(model);
+                    //return View(model);
+                    return RedirectToLocal(returnUrl);
                 }
             }
 

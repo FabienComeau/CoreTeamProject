@@ -160,6 +160,25 @@
 
 <div>
     <a asp-action="Edit" asp-route-id="@Model.eventID">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    @if (Model.subCategoryID == 1 || Model.subCategoryID == 2 || Model.subCategoryID == 3 || Model.subCategoryID == 4)
+    {
+        <a asp-action="Index" asp-route-id="3">Back To List</a>
+
+    }
+    @if (Model.subCategoryID == 5 || Model.subCategoryID == 6 || Model.subCategoryID == 7)
+    {
+        <a asp-action="Index" asp-route-id="2">Back To List</a>
+
+    }
+    @if (Model.subCategoryID == 8 || Model.subCategoryID == 9 || Model.subCategoryID == 10 || Model.subCategoryID == 15)
+    {
+        <a asp-action="Index" asp-route-id="4">Back To List</a>
+
+    }
+    @if (Model.subCategoryID == 11 || Model.subCategoryID == 12 || Model.subCategoryID == 13 || Model.subCategoryID == 14)
+    {
+        <a asp-action="Index" asp-route-id="1">Back To List</a>
+
+    }
 </div>
 

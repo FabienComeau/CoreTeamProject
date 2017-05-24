@@ -9,6 +9,7 @@ using CoreTeamProject.Data;
 using CoreTeamProject.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Hosting;
+using CoreTeamProject.Helpers;
 
 namespace CoreTeamProject.Controllers
 {
@@ -25,12 +26,14 @@ namespace CoreTeamProject.Controllers
         
 
         // GET: Events
-        public async Task<IActionResult> Index(int? id)
+        public async Task<IActionResult> Index(int? id, int? page)
         {
             var eventContext = _context.Event
                 .Include(e => e.Subcategory)/*.ThenInclude(c => c.Category)*/
                 .Where(c => c.Subcategory.Category.categoryID == id);
-            return View(await eventContext.ToListAsync());
+            //return View(await eventContext.ToListAsync());
+            int pageSize = 1;
+            return View(await PaginatedList<Events>.CreateAsync(eventContext, page ?? 1, pageSize));
             //select * from event where subCategoryID in(select subCategoryID from Subcategory where categoryID = 1)
         }
 
@@ -189,14 +192,22 @@ namespace CoreTeamProject.Controllers
             return View(events);
         }
 
+        public async Task<IActionResult> Search(string search)
+        {
+            var events = _context.Event.Where(e => e.eventName.Contains(search) || e.eventDescription.Contains(search) || e.eventLocation.Contains(search));
+            ViewData["search"] = search;
+            return View(await events.ToListAsync());
+        }
+
 
         private bool EventsExists(int id)
         {
             return _context.Event.Any(e => e.eventID == id);
         }
 
-        private IQueryable<Events> GetUpcomingEvents()
+        private IQueryable<Events> GetUpcomingEvents(int threshold)
         {
+
             IQueryable<Events> upcoming = _context.Event.Where(e => e.eventDate > DateTime.Today).OrderBy(e => e.eventName);
             return upcoming;
         }

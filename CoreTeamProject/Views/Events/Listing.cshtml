@@ -5,35 +5,7 @@
 
             <!-- Blog Posts
             ================================================== -->
-            <div class="span8 blog">
-
-
-                <!-- Blog Post 1 -->
-                <article class="clearfix">
-                    @*@{
-                        int numItems = Model.Count();
-                        if (numItems > 0)
-                        {*@
-                            @*@foreach (var item in Model)
-                            {*@
-                                <a href="blog-single.htm"><img src="~/img/gallery/gallery-img-1-4col.jpg" alt="Post Thumb" class="align-left"></a>
-                                <h4 class="title-bg"><a href="blog-single.htm">A subject that is beautiful in itself</a></h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla iaculis mattis lorem, quis gravida nunc iaculis ac. Proin tristique tellus in est vulputate luctus fermentum ipsum molestie. </p>
-                                <button class="btn btn-mini btn-inverse" type="button">See Event</button>
-                                <div class="post-summary-footer"></div>
-
-                            @*}*@
-
-                        @*}
-                        else
-                        {
-                        <div class="alert alert-danger" role="alert">
-                            There are no events in this category. 
-                        </div>
-                        }
-                    }*@
-                       
-                </article>
+            <div class="span12 blog">
 
                 <a asp-action="Create">Create New</a>
                 </p>
@@ -123,39 +95,6 @@
                         <li><a href="#">Next</a></li>
                     </ul>
                 </div>
-
-            </div>
-
-            <!-- Blog Sidebar
-            ================================================== -->
-            <div class="span4 sidebar">
-
-                <!--Search-->
-                <section>
-                    <div class="input-append">
-                        <form action="#">
-                            <input id="appendedInputButton" size="16" type="text" placeholder="Search"><button class="btn" type="button"><i class="icon-search"></i></button>
-                        </form>
-                    </div>
-                </section>
-
-                <!--Categories-->
-                <h5 class="title-bg">Categories</h5>
-                <ul class="post-category-list">
-                    <li><a href="#"><i class="icon-plus-sign"></i>Design</a></li>
-                    <li><a href="#"><i class="icon-plus-sign"></i>Illustration</a></li>
-                    <li><a href="#"><i class="icon-plus-sign"></i>Tutorials</a></li>
-                    <li><a href="#"><i class="icon-plus-sign"></i>News</a></li>
-                </ul>
-
-                <!--Popular Posts-->
-                <h5 class="title-bg">Categories</h5>
-                <ul class="post-category-list">
-                    <li><a href="#"><i class="icon-plus-sign"></i>Design</a></li>
-                    <li><a href="#"><i class="icon-plus-sign"></i>Illustration</a></li>
-                    <li><a href="#"><i class="icon-plus-sign"></i>Tutorials</a></li>
-                    <li><a href="#"><i class="icon-plus-sign"></i>News</a></li>
-                </ul>
             </div>
     </div>
 

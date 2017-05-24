@@ -39,6 +39,7 @@ namespace CoreTeamProject.Controllers
             _logger = loggerFactory.CreateLogger<ManageController>();
         }
 
+
         //
         // GET: /Manage/Index
         [HttpGet]
