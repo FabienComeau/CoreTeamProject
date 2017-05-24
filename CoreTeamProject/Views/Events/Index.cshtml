@@ -56,8 +56,8 @@
 
         <!-- Pagination -->
         @{ 
-            var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
-            var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+            var prevDisabled = !Model.HasPreviousPage ? "hide" : "";
+            var nextDisabled = !Model.HasNextPage ? "hide" : "";
         }
         <div class="pagination">
             @*<a asp-action="Index" asp-route-sortOrder="@ViewData["CurrentSort"]" asp-route-currentFilter="@ViewData["CurrentFilter"]" 
@@ -66,8 +66,8 @@
             asp-route-page="@(Model.PageIndex +1)" class="@nextDisabled">Next</a>*@
 
             <span class="page-number">Page@(Model.TotalPages < Model.PageIndex ? 0 : Model.PageIndex)of @Model.TotalPages</span>
-            <a asp-action="Index"  asp-route-page="@(Model.PageIndex - 1)" class="btn btn-info @prevDisabled btn">Previous</a>
-            <a asp-action="Index"  asp-route-page="@(Model.PageIndex + 1)" class="btn btn-info @nextDisabled btn">Next</a>
+            <a asp-action="Index"  asp-route-page="@(Model.PageIndex - 1)" class="btn btn-info @prevDisabled ">Previous</a>
+            <a asp-action="Index"  asp-route-page="@(Model.PageIndex + 1)" class="btn btn-info @nextDisabled ">Next</a>
 
         </div>
 

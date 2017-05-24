@@ -23,7 +23,10 @@
     <Content Include="wwwroot\img\gallery\category-img-2.jpg" />
     <Content Include="wwwroot\img\gallery\category-img-3.jpg" />
     <Content Include="wwwroot\img\gallery\category-img-4.jpg" />
+    <Content Include="wwwroot\img\gallery\funpicforlanding.jpg" />
+    <Content Include="wwwroot\img\gallery\funpicforlandingwithtext.jpg" />
     <Content Include="wwwroot\img\gallery\mockPic.jpg" />
+    <Content Include="wwwroot\img\gallery\musicwithtext.jpg" />
     <Content Include="wwwroot\img\gallery\slider-img-1.jpg" />
     <Content Include="wwwroot\img\gallery\slider-img-2.jpg" />
     <Content Include="wwwroot\img\gallery\slider-img-3.jpg" />
@@ -32,10 +35,12 @@
     <Content Include="wwwroot\img\gallery\.png" />
     <Content Include="wwwroot\img\gallery\slider-img-5-with-text.jpg" />
     <Content Include="wwwroot\img\gallery\slider-img-5.jpg" />
+    <Content Include="wwwroot\img\gallery\startLandingPic.jpg" />
     <Content Include="wwwroot\img\gallery\test1.jpg" />
     <Content Include="wwwroot\img\gallery\test2.jpg" />
     <Content Include="wwwroot\img\gallery\testing1.jpg" />
     <Content Include="wwwroot\img\gallery\TheCapitol-4.jpg" />
+    <Content Include="wwwroot\img\gallery\TheCapitol-4withtext.jpg" />
     <Content Include="wwwroot\img\logo.pdn" />
     <Content Include="wwwroot\img\logo.png" />
   </ItemGroup>
