@@ -6,72 +6,78 @@
 
 <h2>Delete</h2>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Events</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <input type="hidden" asp-for="eventID" />
-        <dt>
-            @Html.DisplayNameFor(model => model.eventName)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.eventName)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.eventDescription)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.eventDescription)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.eventDate)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.eventDate)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.eventTime)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.eventTime)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.eventLocation)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.eventLocation)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.eventEmail)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.eventEmail)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.eventPhoneNumber)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.eventPhoneNumber)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.eventCost)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.eventCost)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Subcategory)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Subcategory.subCategoryID)
-        </dd>
-    </dl>
-    
-    <form asp-action="Delete">
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            <a asp-action="Index">Back to List</a>
-        </div>
-    </form>
+
+
+<div class="span6">
+    <h3>Are you sure you want to delete @Model.eventName ?</h3>
+    <div>
+        <hr />
+        <dl class="dl-horizontal">
+            <input type="hidden" asp-for="eventID" />
+            <dt>
+                @Html.DisplayNameFor(model => model.eventName)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.eventName)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.eventDescription)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.eventDescription)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.eventDate)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.eventDate)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.eventTime)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.eventTime)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.eventLocation)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.eventLocation)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.eventEmail)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.eventEmail)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.eventPhoneNumber)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.eventPhoneNumber)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.eventCost)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.eventCost)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Subcategory)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Subcategory.subCategoryID)
+            </dd>
+        </dl>
+
+        <form asp-action="Delete">
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-inverse btn-mini" /> |
+                <a asp-action="Index">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="offset6">
+    <img src="~/img/gallery/popart2.jpg" class="img-responsive" style="max-width:400px"/>
 </div>

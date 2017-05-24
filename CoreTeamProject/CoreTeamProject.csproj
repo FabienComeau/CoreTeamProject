@@ -27,6 +27,10 @@
     <Content Include="wwwroot\img\gallery\funpicforlandingwithtext.jpg" />
     <Content Include="wwwroot\img\gallery\mockPic.jpg" />
     <Content Include="wwwroot\img\gallery\musicwithtext.jpg" />
+    <Content Include="wwwroot\img\gallery\popart1.jpg" />
+    <Content Include="wwwroot\img\gallery\popart2.jpg" />
+    <Content Include="wwwroot\img\gallery\popart3.jpg" />
+    <Content Include="wwwroot\img\gallery\popart4.jpg" />
     <Content Include="wwwroot\img\gallery\slider-img-1.jpg" />
     <Content Include="wwwroot\img\gallery\slider-img-2.jpg" />
     <Content Include="wwwroot\img\gallery\slider-img-3.jpg" />

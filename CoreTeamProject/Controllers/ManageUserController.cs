@@ -10,22 +10,22 @@ using CoreTeamProject.Models;
 
 namespace CoreTeamProject.Controllers
 {
-    public class UserController : Controller
+    public class ManageUserController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public UserController(ApplicationDbContext context)
+        public ManageUserController(ApplicationDbContext context)
         {
             _context = context;    
         }
 
-        // GET: User
+        // GET: ManageUser
         public async Task<IActionResult> Index()
         {
             return View(await _context.ApplicationUser.ToListAsync());
         }
 
-        // GET: User/Details/5
+        // GET: ManageUser/Details/5
         public async Task<IActionResult> Details(string id)
         {
             if (id == null)
@@ -43,13 +43,13 @@ namespace CoreTeamProject.Controllers
             return View(applicationUser);
         }
 
-        // GET: User/Create
+        // GET: ManageUser/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: User/Create
+        // POST: ManageUser/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -65,7 +65,7 @@ namespace CoreTeamProject.Controllers
             return View(applicationUser);
         }
 
-        // GET: User/Edit/5
+        // GET: ManageUser/Edit/5
         public async Task<IActionResult> Edit(string id)
         {
             if (id == null)
@@ -81,12 +81,12 @@ namespace CoreTeamProject.Controllers
             return View(applicationUser);
         }
 
-        // POST: User/Edit/5
+        // POST: ManageUser/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("Id,UserName,Email,EmailConfirmed,LockoutEnd,LockoutEnabled,AccessFailedCount")] ApplicationUser applicationUser)
+        public async Task<IActionResult> Edit(string id, [Bind("Id,UserName,NormalizedUserName,Email,NormalizedEmail,EmailConfirmed,PasswordHash,SecurityStamp,ConcurrencyStamp,PhoneNumber,PhoneNumberConfirmed,TwoFactorEnabled,LockoutEnd,LockoutEnabled,AccessFailedCount")] ApplicationUser applicationUser)
         {
             if (id != applicationUser.Id)
             {
@@ -95,14 +95,10 @@ namespace CoreTeamProject.Controllers
 
             if (ModelState.IsValid)
             {
-                //_context.Update(applicationUser);
-                //await _context.SaveChangesAsync();
-                //return RedirectToAction("Index");
                 try
                 {
                     _context.Update(applicationUser);
                     await _context.SaveChangesAsync();
-                    //return RedirectToAction("Index");
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -120,7 +116,7 @@ namespace CoreTeamProject.Controllers
             return View(applicationUser);
         }
 
-        // GET: User/Delete/5
+        // GET: ManageUser/Delete/5
         public async Task<IActionResult> Delete(string id)
         {
             if (id == null)
@@ -138,7 +134,7 @@ namespace CoreTeamProject.Controllers
             return View(applicationUser);
         }
 
-        // POST: User/Delete/5
+        // POST: ManageUser/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(string id)

@@ -144,7 +144,7 @@ namespace CoreTeamProject.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction("Index");
+                return RedirectToAction("Listing");
             }
             ViewData["subCategoryID"] = new SelectList(_context.SubCategory, "subCategoryID", "subCategoryID", events.subCategoryID);
             return View(events);

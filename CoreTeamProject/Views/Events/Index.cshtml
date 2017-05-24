@@ -65,9 +65,9 @@
             <a asp-action="Index" asp-route-sortOrder="@ViewData["CurrentSort"]" asp-route-currentFilter="@ViewData["CurrentFilter"]" 
             asp-route-page="@(Model.PageIndex +1)" class="@nextDisabled">Next</a>*@
 
-            <span class="page-number">Page@(Model.TotalPages < Model.PageIndex ? 0 : Model.PageIndex)of @Model.TotalPages</span>
-            <a asp-action="Index"  asp-route-page="@(Model.PageIndex - 1)" class="btn btn-info @prevDisabled ">Previous</a>
-            <a asp-action="Index"  asp-route-page="@(Model.PageIndex + 1)" class="btn btn-info @nextDisabled ">Next</a>
+            <span class="page-number">Event @(Model.TotalPages < Model.PageIndex ? 0 : Model.PageIndex ) of @Model.TotalPages</span>
+            <a asp-action="Index"  asp-route-page="@(Model.PageIndex - 1)" class="btn btn-inverse @prevDisabled " style="margin-left:10px">Previous</a>
+            <a asp-action="Index"  asp-route-page="@(Model.PageIndex + 1)" class="btn btn-inverse @nextDisabled " style="margin-left:10px">Next</a>
 
         </div>
 

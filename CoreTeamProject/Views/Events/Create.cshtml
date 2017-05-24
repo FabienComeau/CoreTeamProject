@@ -8,95 +8,102 @@
 
 <h2>Create Event</h2>
 
-<form asp-action="Create" enctype="multipart/form-data">
-    <div class="form-horizontal">
-        <hr />
-        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-        <div class="form-group scoop-form">
-            <label asp-for="eventName" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="eventName" class="form-control" />
-                <span asp-validation-for="eventName" class="text-danger"></span>
+<div class="span6">
+    <form asp-action="Create" enctype="multipart/form-data">
+        <div class="form-horizontal">
+            <hr />
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group scoop-form">
+                <label asp-for="eventName" class="col-md-2 control-label"></label>
+                <div class="col-md-10">
+                    <input asp-for="eventName" class="form-control" />
+                    <span asp-validation-for="eventName" class="text-danger"></span>
+                </div>
             </div>
-        </div>
 
-        <div class="form-group scoop-form">
-            <label asp-for="eventDescription" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <textarea rows="4" cols="50" asp-for="eventDescription"></textarea>
-                @*<input type="text" asp-for="eventDescription" class="form-control" />*@
-                <span asp-validation-for="eventDescription" class="text-danger"></span>
+            <div class="form-group scoop-form">
+                <label asp-for="eventDescription" class="col-md-2 control-label"></label>
+                <div class="col-md-10">
+                    <textarea rows="4" cols="50" asp-for="eventDescription"></textarea>
+                    @*<input type="text" asp-for="eventDescription" class="form-control" />*@
+                    <span asp-validation-for="eventDescription" class="text-danger"></span>
+                </div>
             </div>
-        </div>
-        <div class="form-group scoop-form">
-            <label asp-for="eventDate" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="eventDate" class="form-control" />
-                <span asp-validation-for="eventDate" class="text-danger"></span>
+            <div class="form-group scoop-form">
+                <label asp-for="eventDate" class="col-md-2 control-label"></label>
+                <div class="col-md-10">
+                    <input asp-for="eventDate" class="form-control" />
+                    <span asp-validation-for="eventDate" class="text-danger"></span>
+                </div>
             </div>
-        </div>
-        <div class="form-group scoop-form">
-            <label asp-for="eventTime" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="eventTime" class="form-control" />
-                <span asp-validation-for="eventTime" class="text-danger"></span>
+            <div class="form-group scoop-form">
+                <label asp-for="eventTime" class="col-md-2 control-label"></label>
+                <div class="col-md-10">
+                    <input asp-for="eventTime" class="form-control" />
+                    <span asp-validation-for="eventTime" class="text-danger"></span>
+                </div>
             </div>
-        </div>
-        <div class="form-group scoop-form">
-            <label asp-for="eventLocation" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="eventLocation" class="form-control" />
-                <span asp-validation-for="eventLocation" class="text-danger"></span>
+            <div class="form-group scoop-form">
+                <label asp-for="eventLocation" class="col-md-2 control-label"></label>
+                <div class="col-md-10">
+                    <input asp-for="eventLocation" class="form-control" />
+                    <span asp-validation-for="eventLocation" class="text-danger"></span>
+                </div>
             </div>
-        </div>
-        <div class="form-group scoop-form">
-            <label asp-for="eventEmail" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="eventEmail" class="form-control" />
-                <span asp-validation-for="eventEmail" class="text-danger"></span>
+            <div class="form-group scoop-form">
+                <label asp-for="eventEmail" class="col-md-2 control-label"></label>
+                <div class="col-md-10">
+                    <input asp-for="eventEmail" class="form-control" />
+                    <span asp-validation-for="eventEmail" class="text-danger"></span>
+                </div>
             </div>
-        </div>
-        <div class="form-group scoop-form">
-            <label asp-for="eventPhoneNumber" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="eventPhoneNumber" class="form-control" />
-                <span asp-validation-for="eventPhoneNumber" class="text-danger"></span>
+            <div class="form-group scoop-form">
+                <label asp-for="eventPhoneNumber" class="col-md-2 control-label"></label>
+                <div class="col-md-10">
+                    <input asp-for="eventPhoneNumber" class="form-control" />
+                    <span asp-validation-for="eventPhoneNumber" class="text-danger"></span>
+                </div>
             </div>
-        </div>
-        <div class="form-group scoop-form">
-            <label asp-for="eventCost" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="eventCost" class="form-control" />
-                <span asp-validation-for="eventCost" class="text-danger"></span>
+            <div class="form-group scoop-form">
+                <label asp-for="eventCost" class="col-md-2 control-label"></label>
+                <div class="col-md-10">
+                    <input asp-for="eventCost" class="form-control" />
+                    <span asp-validation-for="eventCost" class="text-danger"></span>
+                </div>
             </div>
-        </div>
-        <div class="form-group scoop-form">
-            <label asp-for="subCategoryID" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <select asp-for="subCategoryID" class ="form-control" asp-items="@FormDataHelper.GetSubCategories()"></select>
+            <div class="form-group scoop-form">
+                <label asp-for="subCategoryID" class="col-md-2 control-label"></label>
+                <div class="col-md-10">
+                    <select asp-for="subCategoryID" class="form-control" asp-items="@FormDataHelper.GetSubCategories()"></select>
+                </div>
             </div>
-        </div>
 
-        @*lwilliston: file upload (restrict to .jpg)*@
-        <div class="form-group scoop-form">
-            <label for="files" class="col-md-2 control-label">Choose a profile image</label>
-            <div class="col-md-offset-2 col-md-10">
-                <input type="file" name="files" multiple class="form-control" accept=".jpg" />
+            @*lwilliston: file upload (restrict to .jpg)*@
+            <div class="form-group scoop-form">
+                <label for="files" class="col-md-2 control-label">Choose a profile image</label>
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="file" name="files" multiple class="form-control" accept=".jpg" />
+                </div>
             </div>
-        </div>
 
 
-        <div class="form-group scoop-form">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+            <div class="form-group scoop-form">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-inverse btn-mini" />
+                </div>
             </div>
         </div>
+    </form>
+    <div>
+        <a asp-action="Index">Back to List</a>
     </div>
-</form>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
+<div class="offset7">
+    <br />
+    <img src="~/img/gallery/popart4.jpg" class="img-responsive" style="max-width:350px"/>
+</div>
+
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

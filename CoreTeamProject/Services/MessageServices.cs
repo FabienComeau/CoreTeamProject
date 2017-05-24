@@ -20,7 +20,7 @@ namespace CoreTeamProject.Services
             // lwilliston
             // NOTE:  using MailKit
             var emailMessage = new MimeMessage();
-            emailMessage.From.Add(new MailboxAddress("IdentityDemo", "leanneoulton@gmail.com"));
+            emailMessage.From.Add(new MailboxAddress("The Scoop", "leanneoulton@gmail.com"));
             emailMessage.To.Add(new MailboxAddress("", email));
             emailMessage.Subject = subject;
             // default plain text message 
