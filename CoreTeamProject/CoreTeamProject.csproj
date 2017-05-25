@@ -18,19 +18,23 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="wwwroot\img\events\1.jpg" />
     <Content Include="wwwroot\img\events\2.jpg" />
+    <Content Include="wwwroot\img\events\4.jpg" />
     <Content Include="wwwroot\img\gallery\category-img-1.jpg" />
     <Content Include="wwwroot\img\gallery\category-img-2.jpg" />
     <Content Include="wwwroot\img\gallery\category-img-3.jpg" />
     <Content Include="wwwroot\img\gallery\category-img-4.jpg" />
     <Content Include="wwwroot\img\gallery\funpicforlanding.jpg" />
     <Content Include="wwwroot\img\gallery\funpicforlandingwithtext.jpg" />
+    <Content Include="wwwroot\img\gallery\instagram.png" />
     <Content Include="wwwroot\img\gallery\mockPic.jpg" />
     <Content Include="wwwroot\img\gallery\musicwithtext.jpg" />
     <Content Include="wwwroot\img\gallery\popart1.jpg" />
     <Content Include="wwwroot\img\gallery\popart2.jpg" />
     <Content Include="wwwroot\img\gallery\popart3.jpg" />
     <Content Include="wwwroot\img\gallery\popart4.jpg" />
+    <Content Include="wwwroot\img\gallery\popart5.jpg" />
     <Content Include="wwwroot\img\gallery\slider-img-1.jpg" />
     <Content Include="wwwroot\img\gallery\slider-img-2.jpg" />
     <Content Include="wwwroot\img\gallery\slider-img-3.jpg" />
@@ -45,6 +49,8 @@
     <Content Include="wwwroot\img\gallery\testing1.jpg" />
     <Content Include="wwwroot\img\gallery\TheCapitol-4.jpg" />
     <Content Include="wwwroot\img\gallery\TheCapitol-4withtext.jpg" />
+    <Content Include="wwwroot\img\gallery\twitter.png" />
+    <Content Include="wwwroot\img\gallery\website.png" />
     <Content Include="wwwroot\img\logo.pdn" />
     <Content Include="wwwroot\img\logo.png" />
   </ItemGroup>
