@@ -1,0 +1,117 @@
+﻿@model IEnumerable<CoreTeamProject.Models.Events>
+@using CoreTeamProject.Helpers;
+@using CoreTeamProject.Models;
+@*@model PaginatedList<Events>*@
+@{
+    ViewData["Title"] = "Events";
+}
+<!-- Blog Content
+================================================== -->
+<div class="row">
+
+    <!-- Blog Posts
+    ================================================== -->
+    <div class="span8 blog">
+
+
+        <!-- Blog Post 1 -->
+        @*@{
+            int numItems = Model.Count();
+            if (numItems > 0)
+            {*@
+        @*@foreach (var item in Model)
+            {*@
+        @foreach (var items in Model)
+            {
+            <article class="clearfix">
+                <a href="blog-single.htm"><img src="~/img/events/@(items.eventID + ".jpg")" alt="Post Thumb" class="align-left" style="max-width:400px;"></a>
+                <h4 class="title-bg"><a href="blog-single.htm">@Html.DisplayFor(modelItem => items.eventName) </a></h4>
+                <ul class="blog-details-preview" style="list-style:none;">
+                    <li><i class="fa fa-building"></i>  @Html.DisplayFor(modelItem => items.eventLocation)
+                    <li>
+                    <li><i class="fa fa-calendar"></i>  @Html.DisplayFor(modelItem => items.eventDate)
+                </ul>
+
+                <a asp-action="Details" asp-controller="Events" asp-route-id="@items.eventID" class="btn btn-default btn-xs">See Event</a>
+            </article>
+
+        }
+
+
+        @*<div class="post-summary-footer"></div>*@
+
+        @*}*@
+
+        @*}
+                else
+                {
+                <div class="alert alert-danger" role="alert">
+                    There are no events in this category.
+                </div>
+                }
+            }*@
+
+
+
+
+
+        <!-- Pagination -->
+        @*@{
+            var prevDisabled = !Model.HasPreviousPage ? "hide" : "";
+            var nextDisabled = !Model.HasNextPage ? "hide" : "";
+        }
+        <div class="pagination">
+            @*<a asp-action="Index" asp-route-sortOrder="@ViewData["CurrentSort"]" asp-route-currentFilter="@ViewData["CurrentFilter"]"
+                   asp-route-page="@(Model.PageIndex -1)" class="@prevDisabled">Prev</a> |
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["CurrentSort"]" asp-route-currentFilter="@ViewData["CurrentFilter"]"
+                asp-route-page="@(Model.PageIndex +1)" class="@nextDisabled">Next</a>
+
+            <span class="page-number">Event @(Model.TotalPages < Model.PageIndex ? 0 : Model.PageIndex ) of @Model.TotalPages</span>
+            <a asp-action="Index" asp-route-page="@(Model.PageIndex - 1)" class="btn btn-inverse @prevDisabled " style="margin-left:10px">Previous</a>
+            <a asp-action="Index" asp-route-page="@(Model.PageIndex + 1)" class="btn btn-inverse @nextDisabled " style="margin-left:10px">Next</a>
+
+        </div>*@
+
+    </div>
+
+    <!-- Blog Sidebar
+    ================================================== -->
+    <div class="span4 sidebar">
+
+        <!--Search-->
+        <section>
+            <div class="input-append">
+                <form asp-action="Search" asp-controller="Events">
+                    <input id="search" size="16" type="text" name="search" placeholder="Search"><button class="btn" type="button"><i class="icon-search"></i></button>
+                </form>
+            </div>
+        </section>
+
+        <!--Categories-->
+        <h5 class="title-bg">Categories</h5>
+        <ul class="post-category-list">
+            <li><a asp-controller="Events" asp-action="Index" asp-route-id="1"><i class="icon-plus-sign"></i>Festivals</a></li>
+            <li><a asp-controller="Events" asp-action="Index" asp-route-id="2"><i class="icon-plus-sign"></i>Self Betterment</a></li>
+            <li><a asp-controller="Events" asp-action="Index" asp-route-id="3"><i class="icon-plus-sign"></i>Entertainment</a></li>
+            <li><a asp-controller="Events" asp-action="Index" asp-route-id="4"><i class="icon-plus-sign"></i>Social</a></li>
+        </ul>
+
+        <!--Popular Posts-->
+        @*<h5 class="title-bg">Sub-Categories</h5>
+            <ul class="post-category-list">
+
+                @foreach (var item in Model)
+                {
+                    <li><a asp-controller="Events" asp-action="Index" asp-route-id="@item.subCategoryID"><i class="icon-plus-sign"></i>@FormDataHelper.GetSubCategories().ToString()</a></li>
+                }
+            </ul>*@
+    </div>
+</div>
+
+
+
+<a asp-action="Create">Create New</a>
+</p>
+
+
+

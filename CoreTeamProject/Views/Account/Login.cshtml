@@ -11,7 +11,7 @@
 <h2>@ViewData["Title"].</h2>
 
 
-<div class="row">
+<div class="row span6">
     <div class="col-md-8">
         <section>
             <form asp-controller="Account" asp-action="Login" asp-route-returnurl="@ViewData["ReturnUrl"]" method="post" class="form-horizontal">
@@ -88,6 +88,11 @@
         </section>
     </div>*@
 </div>
+
+<div class="offset7">
+    <img src="~/img/gallery/logindarth.jpg" class="img-responsive" style="max-height:300px;"/>
+</div>
+
 
 @section Scripts {
     @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }

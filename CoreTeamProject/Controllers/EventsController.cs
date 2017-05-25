@@ -10,9 +10,11 @@ using CoreTeamProject.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Hosting;
 using CoreTeamProject.Helpers;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CoreTeamProject.Controllers
 {
+    [Authorize]
     public class EventsController : Controller
     {
         private readonly EventContext _context;
@@ -97,6 +99,7 @@ namespace CoreTeamProject.Controllers
             return View(events);
         }
 
+        [Authorize(Roles ="admin")]
         // GET: Events/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -150,6 +153,8 @@ namespace CoreTeamProject.Controllers
             return View(events);
         }
 
+
+        [Authorize(Roles = "admin")]
         // GET: Events/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
@@ -185,6 +190,7 @@ namespace CoreTeamProject.Controllers
             return View();
         }
 
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> Listing(int? SelectedDepartment)
         {
             var events = await _context.Event.ToListAsync();
@@ -210,6 +216,13 @@ namespace CoreTeamProject.Controllers
 
             IQueryable<Events> upcoming = _context.Event.Where(e => e.eventDate > DateTime.Today).OrderBy(e => e.eventName);
             return upcoming;
+        }
+
+        public async Task<IActionResult> Home(int? SelectedDepartment)
+        {
+            var events = await _context.Event.ToListAsync();
+
+            return View(events);
         }
 
 

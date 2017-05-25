@@ -10,6 +10,7 @@ using CoreTeamProject.Models;
 
 namespace CoreTeamProject.Controllers
 {
+    [Authorize(Roles = "admin")]
     public class ManageUserController : Controller
     {
         private readonly ApplicationDbContext _context;
