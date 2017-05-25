@@ -25,6 +25,7 @@
     <Content Include="wwwroot\img\gallery\category-img-2.jpg" />
     <Content Include="wwwroot\img\gallery\category-img-3.jpg" />
     <Content Include="wwwroot\img\gallery\category-img-4.jpg" />
+    <Content Include="wwwroot\img\gallery\facebook-img.png" />
     <Content Include="wwwroot\img\gallery\funpicforlanding.jpg" />
     <Content Include="wwwroot\img\gallery\funpicforlandingwithtext.jpg" />
     <Content Include="wwwroot\img\gallery\instagram.png" />
