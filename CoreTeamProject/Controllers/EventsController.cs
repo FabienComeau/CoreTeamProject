@@ -92,7 +92,7 @@ namespace CoreTeamProject.Controllers
                 }
 
 
-                return RedirectToAction("Index");
+                return RedirectToAction("Home");
 
             }
             ViewData["subCategoryID"] = new SelectList(_context.SubCategory, "subCategoryID", "subCategoryID", events.subCategoryID);
@@ -182,7 +182,7 @@ namespace CoreTeamProject.Controllers
             var events = await _context.Event.SingleOrDefaultAsync(m => m.eventID == id);
             _context.Event.Remove(events);
             await _context.SaveChangesAsync();
-            return RedirectToAction("Index");
+            return RedirectToAction("Listing");
         }
 
         public IActionResult Browser(int? SelectedDepartment)

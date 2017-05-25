@@ -24,7 +24,7 @@
         @foreach (var items in Model)
             {
             <article class="clearfix">
-                <a href="blog-single.htm"><img src="~/img/events/@(items.eventID + ".jpg")" alt="Post Thumb" class="align-left" style="max-width:400px;"></a>
+                <img src="~/img/events/@(items.eventID + ".jpg")" alt="Post Thumb" class="align-left" style="max-width:400px;">
                 <h4 class="title-bg"><a href="blog-single.htm">@Html.DisplayFor(modelItem => items.eventName) </a></h4>
                 <ul class="blog-details-preview" style="list-style:none;">
                     <li><i class="fa fa-building"></i>  @Html.DisplayFor(modelItem => items.eventLocation)

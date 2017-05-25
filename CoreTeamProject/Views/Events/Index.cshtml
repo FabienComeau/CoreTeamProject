@@ -25,9 +25,11 @@
                 {*@
             @foreach (var items in Model)
             {
+
                 <article class="clearfix">
-                    <a href="blog-single.htm"><img src="~/img/events/@(items.eventID + ".jpg")" alt="Post Thumb" class="align-left" style="max-width:400px;"></a>
-                    <h4 class="title-bg"><a href="blog-single.htm">@Html.DisplayFor(modelItem => items.eventName) </a></h4>
+                    <img src="~/img/events/@(items.eventID + ".jpg")" alt="Post Thumb" class="align-left" style="max-width:400px;">
+                    <h4 class="title-bg"><a href="blog-single.htm">@Html.DisplayFor(modelItem => items.eventName) </a> 
+                    </h4>
                     <ul class="blog-details-preview"style="list-style:none;">
                         <li><i class="fa fa-building"></i>  @Html.DisplayFor(modelItem => items.eventLocation)
                         <li>
@@ -35,44 +37,13 @@
                     </ul>
 
                     <a asp-action="Details" asp-controller="Events" asp-route-id="@items.eventID" class="btn btn-default btn-xs">See Event</a>
+
+
                 </article>
 
             }
 
 
-                    @*<div class="post-summary-footer"></div>*@
-
-                    @*}*@
-
-                    @*}
-                            else
-                            {
-                            <div class="alert alert-danger" role="alert">
-                                There are no events in this category.
-                            </div>
-                            }
-                        }*@
-
-               
-
-
-
-        <!-- Pagination -->
-        @{ 
-            var prevDisabled = !Model.HasPreviousPage ? "hide" : "";
-            var nextDisabled = !Model.HasNextPage ? "hide" : "";
-        }
-        <div class="pagination">
-            @*<a asp-action="Index" asp-route-sortOrder="@ViewData["CurrentSort"]" asp-route-currentFilter="@ViewData["CurrentFilter"]" 
-               asp-route-page="@(Model.PageIndex -1)" class="@prevDisabled">Prev</a> |
-            <a asp-action="Index" asp-route-sortOrder="@ViewData["CurrentSort"]" asp-route-currentFilter="@ViewData["CurrentFilter"]" 
-            asp-route-page="@(Model.PageIndex +1)" class="@nextDisabled">Next</a>*@
-
-            <span class="page-number">Event @(Model.TotalPages < Model.PageIndex ? 0 : Model.PageIndex ) of @Model.TotalPages</span>
-            <a asp-action="Index"  asp-route-page="@(Model.PageIndex - 1)" class="btn btn-inverse @prevDisabled " style="margin-left:10px">Previous</a>
-            <a asp-action="Index"  asp-route-page="@(Model.PageIndex + 1)" class="btn btn-inverse @nextDisabled " style="margin-left:10px">Next</a>
-
-        </div>
 
     </div>
 
@@ -89,6 +60,9 @@
             </div>
         </section>
 
+
+
+
         <!--Categories-->
         <h5 class="title-bg">Categories</h5>
         <ul class="post-category-list">
@@ -98,15 +72,26 @@
             <li><a asp-controller="Events" asp-action="Index" asp-route-id="4"><i class="icon-plus-sign"></i>Social</a></li>
         </ul>
 
-        <!--Popular Posts-->
-        @*<h5 class="title-bg">Sub-Categories</h5>
-        <ul class="post-category-list">
-            
-            @foreach (var item in Model)
-            {
-                <li><a asp-controller="Events" asp-action="Index" asp-route-id="@item.subCategoryID"><i class="icon-plus-sign"></i>@FormDataHelper.GetSubCategories().ToString()</a></li>
-            }
-        </ul>*@
+
+        <h5 class="title-bg">More Events</h5>
+
+        @{
+            var prevDisabled = !Model.HasPreviousPage ? "hide" : "";
+            var nextDisabled = !Model.HasNextPage ? "hide" : "";
+        }
+        <br />
+        <br />
+
+        <div class="pagination">
+
+
+            <a asp-action="Index" asp-route-page="@(Model.PageIndex - 1)" class="btn btn-inverse @prevDisabled " style="margin-left:0">Previous</a>
+            <a asp-action="Index" asp-route-page="@(Model.PageIndex + 1)" class="btn btn-inverse @nextDisabled " style="margin-left:0">Next</a>
+
+            <span class="page-number">Event @(Model.TotalPages < Model.PageIndex ? 0 : Model.PageIndex ) of @Model.TotalPages</span>
+        </div>
+
+       
     </div>
 </div>
 
