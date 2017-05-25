@@ -23,8 +23,10 @@
     <Content Include="wwwroot\img\gallery\category-img-2.jpg" />
     <Content Include="wwwroot\img\gallery\category-img-3.jpg" />
     <Content Include="wwwroot\img\gallery\category-img-4.jpg" />
+    <Content Include="wwwroot\img\gallery\facebook-img.png" />
     <Content Include="wwwroot\img\gallery\funpicforlanding.jpg" />
     <Content Include="wwwroot\img\gallery\funpicforlandingwithtext.jpg" />
+    <Content Include="wwwroot\img\gallery\instagram.png" />
     <Content Include="wwwroot\img\gallery\mockPic.jpg" />
     <Content Include="wwwroot\img\gallery\musicwithtext.jpg" />
     <Content Include="wwwroot\img\gallery\popart1.jpg" />
@@ -45,6 +47,8 @@
     <Content Include="wwwroot\img\gallery\testing1.jpg" />
     <Content Include="wwwroot\img\gallery\TheCapitol-4.jpg" />
     <Content Include="wwwroot\img\gallery\TheCapitol-4withtext.jpg" />
+    <Content Include="wwwroot\img\gallery\twitter.png" />
+    <Content Include="wwwroot\img\gallery\website.png" />
     <Content Include="wwwroot\img\logo.pdn" />
     <Content Include="wwwroot\img\logo.png" />
   </ItemGroup>
