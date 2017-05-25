@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using CoreTeamProject.Data;
 using CoreTeamProject.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CoreTeamProject.Controllers
 {
